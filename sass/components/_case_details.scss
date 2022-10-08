@@ -58,7 +58,7 @@
           height: 100%;
           top: 0;
           right: -80px;
-          background: rgba($color: $white, $alpha: 0.1);
+          // background: rgba($color: $white, $alpha: 0.1);
           @include desktop {
             right: -45px;
           }
@@ -75,7 +75,7 @@
       }
     }
     h5 {
-      color: $light;
+      // color: $light;
     }
     p {
       margin: 0;

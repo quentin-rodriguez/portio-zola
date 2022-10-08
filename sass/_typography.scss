@@ -14,12 +14,12 @@ a.text-dark {
     }
 }
 
-.top-title {
-    font-size: 20px;
-    display: block;
-    color: $dark;
-    @extend .mb-3;
-}
+// .top-title {
+//     font-size: 20px;
+//     display: block;
+//     color: $dark;
+//     @extend .mb-3;
+// }
 
 .pre-line {
     margin-left: 20px;
@@ -38,27 +38,27 @@ a.text-dark {
 
 // This fixes the fact that with `markdownify` we can't add `text-light`
 // directly onto the generated `h1`, `h2` etc.
-.text-white {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $white;
-    }
-}
-@each $color, $value in $theme-colors {
-    .text-#{$color} {
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        span {
-            color: $value;
-        }
-    }
-}
+// .text-white {
+//     h1,
+//     h2,
+//     h3,
+//     h4,
+//     h5,
+//     h6 {
+//         color: $white;
+//     }
+// }
+// @each $color, $value in $theme-colors {
+//     .text-#{$color} {
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6,
+//         p,
+//         span {
+//             color: $value;
+//         }
+//     }
+// }

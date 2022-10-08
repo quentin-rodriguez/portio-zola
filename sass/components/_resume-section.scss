@@ -26,13 +26,13 @@
         }
         span{
             &::before{
-                background: $light;
+                // background: $light;
             }
         }
     }
     &__education{
         &_item{
-            background: $white;
+            // background: $white;
             padding: 30px;
             border-radius: 20px;
             margin-bottom: 30px;

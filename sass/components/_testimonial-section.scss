@@ -14,7 +14,7 @@
       height: 100%;
       width: 100%;
       path {
-        fill: $white;
+        // fill: $white;
       }
     }
     @include mobile-xs {
@@ -23,7 +23,7 @@
   }
   &__slider {
     &_item {
-      background: $white;
+      // background: $white;
       border-radius: 20px;
       padding: 60px 50px;
       margin: 30px 25px 60px;

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            {% if page.title %}
+                {{ page.title }} - {{ config.title }}
+            {% else %}
+                {{ config.title }}
+            {% endif %}
+        </title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta itemprop="name" content="{{ config.title }}">
+        <meta itemprop="description" content="{{ config.description }}">
+
+        <link rel="stylesheet" href="{{ get_url(path="css/bootstrap.min.css") }}">
+        <link rel="stylesheet" href="{{ get_url(path="css/fontawesome.min.css") }}">
+        <link rel="stylesheet" href="{{ get_url(path="css/magnific-popup.css") }}">
+        <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+        {% block stylesheet_addons %}{% endblock %}
+    </head>
+
+    <body>
+        {% block header %}{% endblock %}
+
+        <div class="container">
+            {% block main %}{% endblock %}     
+        </div>
+
+        {% block footer %}{% endblock %}
+
+        <script src="{{ get_url(path="js/bootstrap.min.js") }}"></script>
+        <script src="{{ get_url(path="js/fontawesome.min.js") }}"></script>
+        <script src="{{ get_url(path="js/jquery.min.js") }}"></script>
+        <script src="{{ get_url(path="js/jquery.waypoints.min.js") }}"></script>
+        <script src="{{ get_url(path="js/gsap.min.js") }}"></script>
+        <script src="{{ get_url(path="js/imageloaded.min.js") }}"></script>
+        <script src="{{ get_url(path="js/magnific-popup.min.js") }}"></script>
+        <script src="{{ get_url(path="js/slick.min.js")}}"></script>
+        {% block javascript_addons %}{% endblock %} 
+    </body>
+</html>
