@@ -1,10 +1,12 @@
-.section{
-  padding: 100px 0;
+// html{
+//   scroll-behavior: smooth;
+// }
+
+body {
+  background: $body-color;
 }
 
-.unstyle-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin-right: 0;
+.section{
+  padding: 100px 0;
 }
 

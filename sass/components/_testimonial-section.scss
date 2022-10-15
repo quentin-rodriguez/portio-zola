@@ -14,16 +14,35 @@
       height: 100%;
       width: 100%;
       path {
-        // fill: $white;
+        fill: $white;
       }
     }
     @include mobile-xs {
       display: none;
     }
   }
+  &__header {
+    margin-bottom: 50px;
+    span {
+      display: block;
+      font-size: 20px;
+      font-family: $secondary-font;
+      margin: 0 0 30px 0;
+    }
+    h1 {
+      margin: 0;
+      font-size: 55px;
+      font-family: $primary-font;
+      color: $secondary-color;
+      line-height: 1;
+      @include tablet {
+        font-size: 40px;
+      }
+    }
+  }
   &__slider {
     &_item {
-      // background: $white;
+      background: $white;
       border-radius: 20px;
       padding: 60px 50px;
       margin: 30px 25px 60px;
@@ -47,10 +66,14 @@
       }
       &-content {
         margin: 0 0 40px 0;
+        font-family: $secondary-font;
+        font-size: 17px;
         line-height: 35px;
+        color: #282f49;
       }
       &-author {
         margin: 0 0 0 35px;
+        font-family: $secondary-font;
         color: #7e7e8a;
         font-size: 16px;
         line-height: 1;
@@ -99,7 +122,7 @@
             outline: 0;
           }
           &:hover {
-            background: $primary;
+            background: $primary-color;
           }
         }
         &.slick-active {
@@ -107,7 +130,7 @@
           width: 10px;
           border-radius: 50%;
           button {
-            background-color: $primary;
+            background-color: $primary-color;
           }
         }
       }

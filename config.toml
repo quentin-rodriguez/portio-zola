@@ -12,4 +12,52 @@ highlight_code = false
 build_search_index = false
 
 [extra]
-# Put all your custom variables here
+
+logo = "images/logo.png"
+
+menus = [
+  { name = "Home", url = "#home" },
+  { name = "About", url = "#about" },
+  { name = "Service", url = "#service" },
+  { name = "Work", url = "#portfolio" },
+  { name = "Resume", url = "#resume" },
+  { name = "Blog", url = "#blog" },
+  { name = "Contact", url = "#contact" }
+]
+
+address = {
+  phone = "",
+}
+
+
+[extra.home]
+enable = true
+file = "static/data/home.toml"
+
+[extra.about]
+enable = true
+file = "static/data/about.toml"
+
+[extra.service]
+enable = true
+file = "static/data/service.toml"
+
+[extra.portfolio]
+enable = true
+file = "static/data/case_study.toml"
+
+[extra.resume]
+enable = true
+file = "static/data/resume.toml"
+
+[extra.skill]
+enable = true
+file = "static/data/skill.toml"
+
+[extra.testimonial]
+enable = true
+file = "static/data/testimonial.toml"
+
+[extra.blog]
+enable = false
+file = "static/data/blog.toml"

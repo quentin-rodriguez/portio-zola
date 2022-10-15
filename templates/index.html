@@ -1,7 +1,33 @@
-{% extends 'defaults/base.html' %}
+{% extends 'base.html' %}
 
-{% block main %}
+{% block content %}
 
-    {% include 'blog/section.html' %}
+    {% if config.extra.home.enable %}
+        {% include 'partials/home_section.html' %}
+    {% endif %}
+
+    {% if config.extra.about.enable %}
+        {% include 'partials/about_section.html' %}
+    {% endif %}
+
+    {% if config.extra.service.enable %}
+        {% include 'partials/service_section.html' %}
+    {% endif %}
+    
+    {% if config.extra.resume.enable %}
+        {% include 'partials/resume_section.html' %}
+    {% endif %}
+
+    {% if config.extra.skill.enable %}
+        {% include 'partials/skill_section.html' %}
+    {% endif %}
+
+    {% if config.extra.testimonial.enable %}
+        {% include 'partials/testimonial_section.html' %}
+    {% endif %}
+
+    {% if config.extra.blog.enable %}
+        {% include 'partials/blog_section.html' %}
+    {% endif %}
 
 {% endblock %}

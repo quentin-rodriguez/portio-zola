@@ -1,0 +1,27 @@
+{% macro header() %}
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a href="{{ config.base_url }}" class="navbar-brand">
+            <img src="{{ get_url(path=config.extra.logo) }}" alt="site-logo">
+        </a>
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <ul class="nav navbar-nav main-navigation">
+                {% for menu in config.extra.menus %}
+                  <li class="nav-item">
+                    <a href="{{ get_url(path=menu.url) }}" class="nav-link">{{ menu.name }}</a>
+                  </li>
+                {% endfor %}
+            </ul>
+            <div class="navbar-nav">
+                <a href="{{ get_url(path='contact') }}" class="hire_button">Hire Me Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endmacro %}
