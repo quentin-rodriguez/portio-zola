@@ -16,18 +16,29 @@ build_search_index = false
 logo = "images/logo.png"
 
 menus = [
-  { name = "Home", url = "#home" },
-  { name = "About", url = "#about" },
+  { name = "Home",    url = "#home" },
+  { name = "About",   url = "#about" },
   { name = "Service", url = "#service" },
-  { name = "Work", url = "#portfolio" },
-  { name = "Resume", url = "#resume" },
-  { name = "Blog", url = "#blog" },
+  { name = "Work",    url = "#portfolio" },
+  { name = "Resume",  url = "#resume" },
+  { name = "Blog",    url = "#blog" },
   { name = "Contact", url = "#contact" }
 ]
 
-address = {
-  phone = "",
-}
+
+copyright = "All right reserved copyright © Portio 2020"
+sitemaps = [
+  { name = "About me", url = "#about" },
+  { name = "Frequently Ask Question", url = "#" },
+  { name = "Privacy & Policy", url = "#" },
+  { name = "Latest Article", url = "#" }
+]
+
+[extra.address]
+phone = "+(448) 833 5272 332"
+email = "hello@example.com"
+address = "23 Khan Niketon, Grand Street, NYK."
+
 
 
 [extra.home]

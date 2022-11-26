@@ -24,7 +24,7 @@
                         <h1>Let’s Start a Project</h1>
                     </div>
                     <div class="contact__cta_action">
-                        <a href="{{ .Site.Params.contactLink | absURL }}">Get in touch</a>
+                        <a href="{{ get_url(path='contact') }}">Get in touch</a>
                     </div>
                 </div>
             </div>
@@ -32,28 +32,26 @@
         <div class="row contact__widget">
             <div class="col-lg-4">
                 <div class="contact__widget_logo">
-                    <img src="{{ .Site.Params.footerLogo | absURL }}" alt="widget-logo">
+                    <img src="{{ get_url(path=config.extra.logo) }}" alt="widget-logo">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="contact__widget_sitemap">
                     <h3>Sitemap</h3>
                     <ul>
-                        {{ $sitemap := .Site.Menus.sitemap }}
-                        {{ range $sitemap }}
-                          <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-                        {{ end }}
+                        {% for sitemap in config.extra.sitemaps %}
+                          <li><a href="{{ get_url(path=sitemap.url) }}">{{ sitemap.name }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="contact__widget_address">
                     <h3>Address</h3>
-                    {{ $address := .Site.Params.address }}
                     <ul>
-                        <li><a href="tel:{{ $address.phone }}"><i class="fa fa-phone"></i>{{ $address.phone }}</a></li> 
-                        <li><a href="mailto:{{ $address.email }}"><i class="fa fa-envelope"></i>{{ $address.email }}</a></li>
-                        <li><p><i class="fa fa-map-marker"></i>{{ $address.address }}</p></li>
+                        <li><a href="tel:{{ config.extra.address.phone }}"><i class="lni lni-phone"></i>{{ config.extra.address.phone }}</a></li> 
+                        <li><a href="mailto:{{ config.extra.address.email }}"><i class="lni lni-envelope"></i>{{ config.extra.address.email }}</a></li>
+                        <li><p><i class="lni lni-map-marker"></i>{{ config.extra.address.address }}</p></li>
                     </ul>
                 </div>
             </div>
@@ -61,7 +59,7 @@
         <div class="row contact__footer">
             <div class="col-lg-6">
                 <div class="contact__footer_copy">
-                    <p>{{ .Site.Params.copyright }}</p>
+                    <p>{{ config.extra.copyright }}</p>
                 </div>
             </div>
             <div class="col-lg-6">
