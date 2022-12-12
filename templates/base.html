@@ -1,3 +1,5 @@
+{% import 'macros/javascript.html' as macros_js %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +14,6 @@
         <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ get_url(path='css/magnific-popup.css') }}">
         <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
-        {% block stylesheet_addons %}{% endblock %}
     </head>
 
     <body>
@@ -23,15 +24,7 @@
         </div>
 
         {% block footer %}{% endblock %}
-
-        <script src="{{ get_url(path='js/bootstrap.min.js') }}"></script>
-        <script src="{{ get_url(path='js/jquery.min.js') }}"></script>
-        <script src="{{ get_url(path='js/jquery.waypoints.min.js') }}"></script>
-        <script src="{{ get_url(path='js/gsap.min.js') }}"></script>
-        <script src="{{ get_url(path='js/imageloaded.min.js') }}"></script>
-        <script src="{{ get_url(path='js/magnific-popup.min.js') }}"></script>
-        <script src="{{ get_url(path='js/slick.min.js') }}"></script>
-        <script src="{{ get_url(path='js/main.js') }}"></script>
-        {% block javascript_addons %}{% endblock %} 
+        
+        {{ macros_js::javascript() }} 
     </body>
 </html>

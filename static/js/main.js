@@ -172,9 +172,17 @@ function PageLoad() {
     $(".portfolio-item-grid").masonry({
       // options
       itemSelector: ".portfolio-item",
-      // columnWidth: 200,
+      columnWidth: 200,
     });
   
+    // var portfolioGrid = $(".portfolio-item-grid").masonry({
+    //   itemSelector: ".portfolio-item",
+    // });
+  
+    // portfolioGrid.imagesLoaded().progress(function () {
+    //   portfolioGrid.masonry("layout");
+    // });
+
     //   blob animation
   
     var tl = new TimelineMax({

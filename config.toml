@@ -55,7 +55,7 @@ file = "static/data/service.toml"
 
 [extra.portfolio]
 enable = true
-file = "static/data/case_study.toml"
+file = "static/data/portfolio.toml"
 
 [extra.resume]
 enable = true

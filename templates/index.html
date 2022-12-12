@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
+{% import 'macros/header.html' as macros_header %}
+{% import 'macros/footer.html' as macros_footer %}
+{% import 'macros/section/home.html' as macros_home %}
+{% import 'macros/section/about.html' as macros_about %}
+{% import 'macros/section/service.html' as macros_service %}
+{% import 'macros/section/resume.html' as macros_resume %}
+{% import 'macros/section/portfolio.html' as macros_porfolio %}
+
 {% block content %}
 
-    {% if config.extra.home.enable %}
-        {% include 'partials/home_section.html' %}
-    {% endif %}
+    {{ macros_header::header() }}
 
-    {% if config.extra.about.enable %}
-        {% include 'partials/about_section.html' %}
-    {% endif %}
-
-    {% if config.extra.service.enable %}
-        {% include 'partials/service_section.html' %}
-    {% endif %}
-    
-    {% if config.extra.resume.enable %}
-        {% include 'partials/resume_section.html' %}
-    {% endif %}
+    {{ macros_home::home(config=config.extra.home) }}
+    {{ macros_about::about(config=config.extra.about) }}
+    {{ macros_service::service(config=config.extra.service) }}
+    {{ macros_resume::resume(config=config.extra.resume ) }}
+    {{ macros_porfolio::portfolio(config=config.extra.portfolio) }}
 
     {% if config.extra.skill.enable %}
         {% include 'partials/skill_section.html' %}
@@ -29,5 +29,7 @@
     {% if config.extra.blog.enable %}
         {% include 'partials/blog_section.html' %}
     {% endif %}
+
+    {{ macros_footer::footer() }}
 
 {% endblock %}

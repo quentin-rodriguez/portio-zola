@@ -1,0 +1,36 @@
+{% macro portfolio(config) %}
+ {% set section = get_section(path="portfolio/_index.md") %} 
+
+ {% if config.enable %}
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="portfolio__header">
+            <span>{{ section.title }}</span>
+            <h1>{{ section.description }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="portfolio-item-grid">
+            {% for page in section.pages %}
+            <div class="portfolio-item">
+              <img src="{{ get_url(path=page.extra.thumbnail) }}" class="portfolio-item-thumb" alt="portfolio-thumb" />
+              <div class="portfolio-item-content">
+                <span>{{ page.extra.service }}</span>
+                <h3 class="mb-0">
+                  <a class="text-dark" href="{{ page.permalink }}">{{ page.title }}</a>
+                </h3>
+                <a class="see-more-btn" href="{{ page.permalink }}">See details</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ {% endif %}
+{% endmacro %}
