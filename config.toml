@@ -39,8 +39,6 @@ phone = "+(448) 833 5272 332"
 email = "hello@example.com"
 address = "23 Khan Niketon, Grand Street, NYK."
 
-
-
 [extra.home]
 enable = true
 file = "static/data/home.toml"
