@@ -14,6 +14,7 @@ build_search_index = false
 [extra]
 
 logo = "images/logo.png"
+ganalytics = "efzefzefz"
 
 menus = [
   { name = "Home",    url = "#home" },

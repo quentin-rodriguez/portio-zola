@@ -7,29 +7,15 @@
 {% import 'macros/section/service.html' as macros_service %}
 {% import 'macros/section/resume.html' as macros_resume %}
 {% import 'macros/section/portfolio.html' as macros_porfolio %}
+{% import 'macros/section/skill.html' as macros_skill %}
+{% import 'macros/section/testimonial.html' as macros_testimonial %}
 
 {% block content %}
-
-    {{ macros_header::header() }}
-
     {{ macros_home::home(config=config.extra.home) }}
     {{ macros_about::about(config=config.extra.about) }}
     {{ macros_service::service(config=config.extra.service) }}
     {{ macros_resume::resume(config=config.extra.resume ) }}
     {{ macros_porfolio::portfolio(config=config.extra.portfolio) }}
-
-    {% if config.extra.skill.enable %}
-        {% include 'partials/skill_section.html' %}
-    {% endif %}
-
-    {% if config.extra.testimonial.enable %}
-        {% include 'partials/testimonial_section.html' %}
-    {% endif %}
-
-    {% if config.extra.blog.enable %}
-        {% include 'partials/blog_section.html' %}
-    {% endif %}
-
-    {{ macros_footer::footer() }}
-
+    {{ macros_skill::skill(config=config.extra.skill) }}
+    {{ macros_testimonial::testimonial(config=config.extra.testimonial) }}
 {% endblock %}

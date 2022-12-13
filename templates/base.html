@@ -1,3 +1,5 @@
+{% import 'macros/header.html' as macros_header %}
+{% import 'macros/footer.html' as macros_footer %}
 {% import 'macros/javascript.html' as macros_js %}
 
 <!DOCTYPE html>
@@ -17,13 +19,17 @@
     </head>
 
     <body>
-        {% block header %}{% endblock %}
+        {% block header %}
+            {{ macros_header::header() }}
+        {% endblock %}
 
         <div id="content">
             {% block content %}{% endblock %}     
         </div>
 
-        {% block footer %}{% endblock %}
+        {% block footer %}
+            {{ macros_footer::footer() }} 
+        {% endblock %}
         
         {{ macros_js::javascript() }} 
         {{ macros_js::google_analytics() }}
