@@ -43,11 +43,10 @@
                 </g>
               </svg>
             </div>
-            <span>{{ data.infos.title }}</span>
-            <h1>{{ data.infos.subtitle }}</h1>
-            <p>
-              {{ data.infos.description }}
-            </p>
+            <div class="mb-5">  
+             <span class="top-title pre-line">{{ data.infos.title }}</span>
+              {{ data.infos.description | markdown | safe }}
+            </div>
             <a href="{{ get_url(path=data.infos.button_url) }}">{{ data.infos.button_name }}</a>
           </div>
         </div>
