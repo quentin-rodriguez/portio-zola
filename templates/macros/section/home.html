@@ -66,6 +66,7 @@
                 mask-position: center center;
               "
             />
+            {% if data.infos.video_thumb and data.infos.video_url %}
             <div class="hero_figure-popup">
               <div class="thumb">
                 <img src="{{ get_url(path=data.infos.video_thumb) }}" alt="popup" />
@@ -89,6 +90,7 @@
                 </svg>
               </a>
             </div>
+            {% endif %}
           </div>
         </div>
       </div>
