@@ -41,15 +41,17 @@
                           <h1> {{ data.infos.title }} </h1>
                           <p> {{ data.infos.subtitle }} </p>
                       </div>
-                      {% for skill in data.infos.skills %}
-                          <div class="skill__progress_item">
-                              <h6> {{ skill.title }} </h6>
-                              <div class="progress-value"><span>{{ skill.percent }}</span>%</div>
-                              <div class="progress">
-                              <div class="progress-bar" style="width: {{ skill.percent }}%;" aria-valuemin="0" aria-valuemax="{{ skill.percent }}"></div>
-                              </div>
-                          </div>
-                      {% endfor %}
+                      {% if data.infos.skills %}
+                        {% for skill in data.infos.skills %}
+                            <div class="skill__progress_item">
+                                <h6> {{ skill.title }} </h6>
+                                <div class="progress-value"><span>{{ skill.percent }}</span>%</div>
+                                <div class="progress">
+                                <div class="progress-bar" style="width: {{ skill.percent }}%;" aria-valuemin="0" aria-valuemax="{{ skill.percent }}"></div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                      {% endif %}
                   </div>
               </div>
           </div>
