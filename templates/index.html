@@ -9,6 +9,7 @@
 {% import 'macros/section/portfolio.html' as macros_porfolio %}
 {% import 'macros/section/skill.html' as macros_skill %}
 {% import 'macros/section/testimonial.html' as macros_testimonial %}
+{% import 'macros/section/blog.html' as macros_blog %}
 
 {% block content %}
     {{ macros_home::home(config=config.extra.home) }}
@@ -18,4 +19,5 @@
     {{ macros_porfolio::portfolio(config=config.extra.portfolio) }}
     {{ macros_skill::skill(config=config.extra.skill) }}
     {{ macros_testimonial::testimonial(config=config.extra.testimonial) }}
+    {{ macros_blog::blog(config=config.extra.blog) }}
 {% endblock %}

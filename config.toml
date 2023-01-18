@@ -69,5 +69,5 @@ enable = true
 file = "static/data/testimonial.toml"
 
 [extra.blog]
-enable = false
+enable = true
 file = "static/data/blog.toml"

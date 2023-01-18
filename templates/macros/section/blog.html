@@ -1,0 +1,50 @@
+{% macro blog(config) %}
+ {% if config.enable %}
+  {% set section = get_section(path='blog/_index.md') %}
+
+  <section class="section blog" id="blog">
+    <div class="blog__shape">
+      <img src="{{ get_url(path='images/blog/blog-shape.svg') }}" alt="blog shape" />
+    </div>
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <div class="blog__header">
+            <span>{{ section.extra.top_title }}</span>
+            <h1> {{ section.title }} </h1>
+            <p> {{ section.description }} </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="blog__header_button desktop">
+            <a href="{{ get_url(path='blog') }}">See all post</a>
+          </div>
+        </div>
+      </div>
+     
+      <div class="row">
+        {% for page in section.pages %}
+        <div class="col-lg-4">
+          <div class="blog__item">
+            <div class="blog__item-thumb">
+              <img src="{{ get_url(path=page.extra.feature_image) }}" alt="post-image">
+            </div>
+            <div class="blog__item-content">
+              <span>{{ page.date | date(format='') }}</span>
+              <a href="{{ page.permalink }}">{{ page.title }}</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="blog__header_button mobile">
+            <a href="{{ get_url(path='blog') }}">See all post</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ {% endif %}
+{% endmacro  %}
