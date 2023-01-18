@@ -12,12 +12,12 @@
 {% import 'macros/section/blog.html' as macros_blog %}
 
 {% block content %}
-    {{ macros_home::home(config=config.extra.home) }}
-    {{ macros_about::about(config=config.extra.about) }}
-    {{ macros_service::service(config=config.extra.service) }}
-    {{ macros_resume::resume(config=config.extra.resume ) }}
-    {{ macros_porfolio::portfolio(config=config.extra.portfolio) }}
-    {{ macros_skill::skill(config=config.extra.skill) }}
-    {{ macros_testimonial::testimonial(config=config.extra.testimonial) }}
-    {{ macros_blog::blog(config=config.extra.blog) }}
+    {% if config.extra.home %}{{ macros_home::home(config=config.extra.home) }}{% endif %}
+    {% if config.extra.about %}{{ macros_about::about(config=config.extra.about) }}{% endif %}
+    {% if config.extra.service %}{{ macros_service::service(config=config.extra.service) }}{% endif %}
+    {% if config.extra.resume %}{{ macros_resume::resume(config=config.extra.resume ) }}{% endif %}
+    {% if config.extra.portfolio %}{{ macros_porfolio::portfolio(config=config.extra.portfolio) }}{% endif %}
+    {% if config.extra.skill %}{{ macros_skill::skill(config=config.extra.skill) }}{% endif %}
+    {% if config.extra.testimonial %}{{ macros_testimonial::testimonial(config=config.extra.testimonial) }}{% endif %}
+    {% if config.extra.blog %}{{ macros_blog::blog(config=config.extra.blog) }}{% endif %}
 {% endblock %}
