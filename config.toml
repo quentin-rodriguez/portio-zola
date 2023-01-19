@@ -14,7 +14,8 @@ build_search_index = false
 [extra]
 
 logo = "images/logo.png"
-ganalytics = "efzefzefz"
+google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
+formspree_url = "YOUR FORMSPREE URL"
 
 menus = [
   { name = "Home",    url = "#home" },
@@ -39,6 +40,7 @@ sitemaps = [
 phone = "+(448) 833 5272 332"
 email = "hello@example.com"
 address = "23 Khan Niketon, Grand Street, NYK."
+opening_hours = "Open from 10am to 6pm (close at 5pm Sundays) "
 
 [extra.home]
 enable = true
