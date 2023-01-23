@@ -1,0 +1,31 @@
+{% macro seo() %}
+{% if section.title %}
+    <title>{{ section.title }} | {{ config.title }}</title>
+{% else %}
+    <title>{{ config.title }}</title>
+{% endif %}
+
+{% if config.generate_feed %}
+    <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ get_url(path='rss.xml') }}">
+{% endif %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximim-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta itemprop="name" content="{{ config.title }}">
+<meta itemprop="description" content="{{ config.description }}"> 
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ get_url(path='images/apple-icon-144x144.png') }}">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ get_url(path='images/apple-icon-120x120.png') }}">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ get_url(path='images/apple-icon-72x72.png') }}">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ get_url(path='images/apple-icon-57x57.png') }}">
+<link rel="shortcut icon" href="{{ get_url(path='images/favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ get_url(path='images/favicon.png') }}" type="image/x-icon">
+{% endmacro %}
+
+{% macro stylesheets() %}
+<link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ get_url(path='css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+{% endmacro  %}

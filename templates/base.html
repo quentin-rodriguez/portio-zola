@@ -1,21 +1,14 @@
 {% import 'macros/header.html' as macros_header %}
 {% import 'macros/footer.html' as macros_footer %}
+{% import 'macros/head.html' as macros_head %}
 {% import 'macros/javascript.html' as macros_js %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config.default_language }}">
     <head>
-        <title>{{ page.title | default(value="Untitled") }} | {{ config.title }}</title>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta itemprop="name" content="{{ config.title }}">
-        <meta itemprop="description" content="{{ config.description }}">
-
-        <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ get_url(path='css/magnific-popup.css') }}">
-        <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+        {{ macros_head::seo() }}
+        {{ macros_head::stylesheets() }}
+        {{ macros_js::google_analytics() }}
     </head>
 
     <body>
@@ -32,6 +25,5 @@
         {% endblock %}
         
         {{ macros_js::javascript() }} 
-        {{ macros_js::google_analytics() }}
     </body>
 </html>

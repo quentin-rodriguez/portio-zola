@@ -49,9 +49,29 @@
                 <div class="contact__widget_address">
                     <h3>Address</h3>
                     <ul>
-                        <li><a href="tel:{{ config.extra.address.phone }}"><i class="lni lni-phone"></i>{{ config.extra.address.phone }}</a></li> 
-                        <li><a href="mailto:{{ config.extra.address.email }}"><i class="lni lni-envelope"></i>{{ config.extra.address.email }}</a></li>
-                        <li><p><i class="lni lni-map-marker"></i>{{ config.extra.address.address }}</p></li>
+                        {% if config.extra.address.phone %}
+                        <li>
+                            <a href="tel:{{ config.extra.address.phone }}">
+                                <i class="lni lni-phone"></i>{{ config.extra.address.phone }}
+                            </a>
+                        </li> 
+                        {% endif %}
+
+                        {% if config.extra.address.email %}
+                        <li>
+                            <a href="mailto:{{ config.extra.address.email }}">
+                                <i class="lni lni-envelope"></i>{{ config.extra.address.email }}
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        {% if config.extra.address.address %}
+                        <li>
+                            <p>
+                                <i class="lni lni-map-marker"></i>{{ config.extra.address.address }}
+                            </p>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -65,10 +85,13 @@
             <div class="col-lg-6">
                 <div class="contact__footer_social">
                     <ul>
-                        <li><a href=""><i class="fa fa-facebook-official"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin-square"></i></a></li>
-                        <li><a href=""><i class="fa fa-pinterest-square"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        {% for social in config.extra.socials %}
+                        <li class="d-inline-block mx-2">
+                            <a target="_blank" href="{{ social.url }}">
+                                <i class="lni lni-{{ social.icon }}"></i>
+                            </a>
+                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

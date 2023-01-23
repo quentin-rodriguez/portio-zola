@@ -1,3 +1,4 @@
+title = "Portio"
 # The URL the site will be built for
 base_url = "https://example.com"
 
@@ -12,10 +13,10 @@ highlight_code = false
 build_search_index = false
 
 [extra]
-
 logo = "images/logo.png"
 google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
 formspree_url = "YOUR FORMSPREE URL"
+copyright = "All right reserved copyright © Portio 2020"
 
 menus = [
   { name = "Home",    url = "#home" },
@@ -27,8 +28,6 @@ menus = [
   { name = "Contact", url = "#contact" }
 ]
 
-
-copyright = "All right reserved copyright © Portio 2020"
 sitemaps = [
   { name = "About me", url = "#about" },
   { name = "Frequently Ask Question", url = "#" },
@@ -36,11 +35,22 @@ sitemaps = [
   { name = "Latest Article", url = "#" }
 ]
 
+socials = [
+  { icon = "facebook-original", url = "https://www.facebook.com/" },
+  { icon = "linkedin-original", url = "https://www.linkedin.com/" },
+  { icon = "pinterest",         url = "https://www.pinterest.com" },
+  { icon = "twitter-original",  url = "https://www.twitter.com" }
+]
+
 [extra.address]
 phone = "+(448) 833 5272 332"
 email = "hello@example.com"
 address = "23 Khan Niketon, Grand Street, NYK."
 opening_hours = "Open from 10am to 6pm (close at 5pm Sundays) "
+
+# [extra.map]
+# latitude = "14.022"
+# longitude = "12.0665"
 
 [extra.home]
 enable = true

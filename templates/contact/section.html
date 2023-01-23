@@ -41,6 +41,7 @@
 <section class="section contact__info">
   <div class="container">
     <div class="row">
+      {% if config.extra.address.address %}
       <div class="col-lg-4">
         <div class="contact__info_item">
           <div class="contact__info_item-icon">
@@ -59,6 +60,9 @@
           <p>{{ config.extra.address.address }}</p>
         </div>
       </div>
+      {% endif %}
+
+      {% if config.extra.address.phone and config.extra.address.email %}
       <div class="col-lg-4">
         <div class="contact__info_item">
           <div class="contact__info_item-icon">
@@ -77,9 +81,11 @@
           <p>{{ config.extra.address.phone }}<br>
             <a href="mailto:{{ config.extra.address.email }}">{{ config.extra.address.email }}</a>
           </p>
-
         </div>
       </div>
+      {% endif %}
+
+      {% if config.extra.address.opening_hours %}
       <div class="col-lg-4">
         <div class="contact__info_item">
           <div class="contact__info_item-icon">
@@ -98,6 +104,7 @@
           <p>{{ config.extra.address.opening_hours }}</p>
         </div>
       </div>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -105,7 +112,7 @@
 <section class="contact-form">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="{% if config.extra.map.longitude and config.extra.map.latitude %}col-lg-6{% else %}col-lg-12{% endif %}">
         <div class="contact-form-title">
           <h3>Contact Form</h3>
         </div>
