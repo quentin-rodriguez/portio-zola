@@ -23,7 +23,7 @@
                 <h3 class="mb-0">
                   <a class="text-dark" href="{{ page.permalink }}">{{ page.title }}</a>
                 </h3>
-                <a class="see-more-btn" href="{{ page.permalink }}">See details</a>
+                <a class="see-more-btn" href="{{ page.permalink }}">{{ trans(key='see_details', lang=lang) }}</a>
               </div>
             </div>
             {% endfor %}

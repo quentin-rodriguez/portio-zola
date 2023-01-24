@@ -39,7 +39,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="contact__widget_sitemap">
-                    <h3>Sitemap</h3>
+                    <h3>{{ trans(key='sitemap', lang=lang) }}</h3>
                     <ul>
                         {% for sitemap in config.extra.sitemaps %}
                           <li><a href="{{ get_url(path=sitemap.url) }}">{{ sitemap.name }}</a></li>
@@ -49,7 +49,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="contact__widget_address">
-                    <h3>Address</h3>
+                    <h3>{{ trans(key='address', lang=lang) }}</h3>
                     <ul>
                         {% if config.extra.address.phone %}
                         <li>

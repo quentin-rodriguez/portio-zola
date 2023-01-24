@@ -2,15 +2,13 @@ name = "portio-zola"
 description = "It's a transcription of Portio-Hugo theme"
 licence = "MIT"
 homepage = "https://gitlab.com/quentin117/portio-zola.git"
-min_version = "0.1.0"
-demo = ""
+min_version = "1.3.0"
+demo = "https://staticmania.com/"
 
 [author]
 name = "Quentin Rodriguez"
-homepage = ""
 repo = "https://gitlab.com/quentin117/portio-zola.git"
 
 [original]
 author = "Static Mania"
-homepage = "https://staticmania.com/"
 repo = "https://github.com/StaticMania/portio-hugo.git"

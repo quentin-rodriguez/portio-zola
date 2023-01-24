@@ -12,6 +12,23 @@ highlight_code = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+default_language = "en"
+
+[languages.en.translations]
+contact = "Hire Me Now"
+see_details = "See Details"
+sitemap = "Sitemap"
+address = "Address"
+phone = "Phone"
+email = "Email"
+opening_hours = "Working hours"
+form_title = "Contact form"
+form_button = "Send Message"
+form_input_name = "Name"
+form_input_email = "Email"
+form_input_message = "Message"
+form_input_agreement = "I agree that my submitted data is being collected and stored."
+
 [extra]
 logo = "images/logo.png"
 google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"

@@ -3,8 +3,10 @@
 {% import 'macros/head.html' as macros_head %}
 {% import 'macros/javascript.html' as macros_js %}
 
+{% set_global lang = config.default_language %}
+
 <!DOCTYPE html>
-<html lang="{{ config.default_language }}">
+<html lang="{{ lang }}">
     <head>
         {{ macros_head::seo() }}
         {{ macros_head::stylesheets() }}
