@@ -17,6 +17,8 @@ logo = "images/logo.png"
 google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
 formspree_url = "YOUR FORMSPREE URL"
 copyright = "All right reserved copyright © Portio 2020"
+display_cta = true
+
 
 menus = [
   { name = "Home",    url = "#home" },
