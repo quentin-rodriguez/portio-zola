@@ -1,0 +1,28 @@
+@import "vendors/lineicons";
+@import "vendors/slick-theme";
+@import "vendors/slick";
+
+@import "utilities/variables";
+@import "utilities/mixins";
+
+@import "base/typography";
+@import "base/reset";
+
+@import "pages/hero-section";
+@import "pages/about-section";
+@import "pages/service-section";
+@import "pages/portfolio-section";
+@import "pages/resume-section";
+@import "pages/skill-section";
+@import "pages/testimonial-section";
+@import "pages/blog-section";
+@import "pages/contact-section";
+@import "pages/contact";
+
+@import "components/preloder";
+@import "components/site-navigation";
+@import "components/blog";
+@import "components/single-blog-post";
+@import "components/page-title";
+@import "components/clasic-blog";
+@import "components/case_details";

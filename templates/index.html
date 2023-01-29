@@ -19,5 +19,5 @@
     {% if config.extra.portfolio %}{{ macros_porfolio::portfolio(config=config.extra.portfolio) }}{% endif %}
     {% if config.extra.skill %}{{ macros_skill::skill(config=config.extra.skill) }}{% endif %}
     {% if config.extra.testimonial %}{{ macros_testimonial::testimonial(config=config.extra.testimonial) }}{% endif %}
-    {% if config.extra.blog %}{{ macros_blog::blog(config=config.extra.blog) }}{% endif %}
+    {% if config.extra.blog %}{{ macros_blog::blog(config=config.extra.blog, format=date_format) }}{% endif %}
 {% endblock %}

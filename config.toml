@@ -30,6 +30,7 @@ form_input_message = "Message"
 form_input_agreement = "I agree that my submitted data is being collected and stored."
 
 [extra]
+date_format = "%d %B, %Y"
 logo = "images/logo.png"
 google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
 formspree_url = "YOUR FORMSPREE URL"

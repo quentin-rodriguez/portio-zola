@@ -1,4 +1,4 @@
-{% macro blog(config) %}
+{% macro blog(config, format) %}
  {% if config.enable %}
   {% set section = get_section(path='blog/_index.md') %}
 
@@ -24,17 +24,19 @@
      
       <div class="row">
         {% for page in section.pages %}
-        <div class="col-lg-4">
-          <div class="blog__item">
-            <div class="blog__item-thumb">
-              <img src="{{ get_url(path=page.extra.feature_image) }}" alt="post-image">
+          {% if loop.index <= 3 %}
+            <div class="col-lg-4">
+              <div class="blog__item">
+                <div class="blog__item-thumb">
+                  <img src="{{ get_url(path=page.extra.feature_image) }}" alt="post-image">
+                </div>
+                <div class="blog__item-content">
+                  <span>{{ page.date | date(format=format) }}</span>
+                  <a href="{{ page.permalink }}">{{ page.title }}</a>
+                </div>
+              </div>
             </div>
-            <div class="blog__item-content">
-              <span>{{ page.date | date(format='') }}</span>
-              <a href="{{ page.permalink }}">{{ page.title }}</a>
-            </div>
-          </div>
-        </div>
+          {% endif %}
         {% endfor %}
       </div>
       <div class="row">

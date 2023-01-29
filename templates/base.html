@@ -4,6 +4,7 @@
 {% import 'macros/javascript.html' as macros_js %}
 
 {% set_global lang = config.default_language %}
+{% set_global date_format = config.extra.date_format %}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}">
@@ -11,6 +12,7 @@
         {{ macros_head::seo() }}
         {{ macros_head::stylesheets() }}
         {{ macros_js::google_analytics() }}
+        {% block extra_head %}{% endblock %}
     </head>
 
     <body>
@@ -26,6 +28,7 @@
             {{ macros_footer::footer() }} 
         {% endblock %}
         
-        {{ macros_js::javascript() }} 
+        {{ macros_js::javascripts() }} 
+        {% block extra_javascripts %}{% endblock %}
     </body>
 </html>
