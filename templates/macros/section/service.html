@@ -41,6 +41,7 @@
                 <div class="service__slider">
                     {% for service in data.infos.services %}
                     <div class="service__slider_item">
+                        {% if service.image %}
                         <div class="service__slider_item-icon">
                             <div class="icon-background">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="122.457" height="109.702" viewBox="0 0 122.457 109.702">
@@ -51,6 +52,7 @@
                                 <img src="{{ get_url(path=service.image) }}" alt="ui-ux">
                             </div>
                         </div>
+                        {% endif %}
                         <h4> {{ service.title }} </h4>
                         <p> {{ service.content | markdown | safe }} </p>
                     </div>
