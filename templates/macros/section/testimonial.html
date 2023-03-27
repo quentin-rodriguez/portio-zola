@@ -12,8 +12,10 @@
           <div class="row text-center">
               <div class="col-lg-6 offset-lg-3">
                   <div class="testimonial__header">
-                      <span>{{ data.infos.top_title }}</span>
-                      <h1>{{ data.infos.title }}</h1>
+                    {% if data.infos.top_title %}
+                        <span>{{ data.infos.top_title }}</span>
+                    {% endif %}
+                    <h1>{{ data.infos.title }}</h1>
                   </div>
               </div>
           </div>

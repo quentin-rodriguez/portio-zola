@@ -30,7 +30,9 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="service__header">
-                    <span>{{ data.infos.top_title }}</span>
+                    {% if data.infos.top_title %}
+                        <span>{{ data.infos.top_title }}</span>
+                    {% endif %}
                     <h1>{{ data.infos.title }}</h1>
                     <p> {{ data.infos.subtitle }} </p>
                 </div>

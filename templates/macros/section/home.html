@@ -44,7 +44,7 @@
               </svg>
             </div>
             <div class="mb-5">  
-             <span class="top-title pre-line">{{ data.infos.title }}</span>
+              {% if data.infos.title %}<span class="top-title pre-line">{{ data.infos.title }}</span>{% endif %}
               {{ data.infos.description | markdown | safe }}
             </div>
             <a href="{{ get_url(path=data.infos.button_url) }}">{{ data.infos.button_name }}</a>

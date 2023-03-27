@@ -7,8 +7,8 @@
          <div class="row text-center">
              <div class="col-lg-6 offset-lg-3">
                  <div class="about_header mb-5">
-                     <span class="top-title">{{ data.infos.title }}</span>
-                     {{ data.infos.description | markdown(inline = true) | safe }}
+                    {% if data.infos.title %}<span class="top-title">{{ data.infos.title }}</span>{% endif %}
+                    {{ data.infos.description | markdown(inline = true) | safe }}
                  </div>
              </div>
          </div>

@@ -37,9 +37,11 @@
               <div class="col-lg-6">
                   <div class="skill__progress">
                       <div class="skill__progress_heading">
-                          <span>{{ data.infos.top_title }}</span>
-                          <h1> {{ data.infos.title }} </h1>
-                          <p> {{ data.infos.subtitle }} </p>
+                        {% if data.infos.top_title %}  
+                            <span>{{ data.infos.top_title }}</span>
+                        {% endif %}
+                        <h1> {{ data.infos.title }} </h1>
+                        <p> {{ data.infos.subtitle }} </p>
                       </div>
                       {% if data.infos.skills %}
                         {% for skill in data.infos.skills %}
