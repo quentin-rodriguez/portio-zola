@@ -32,6 +32,7 @@ form_input_agreement = "I agree that my submitted data is being collected and st
 [extra]
 date_format = "%d %B, %Y"
 logo = "images/logo.png"
+footer_logo = "images/logo.png"
 google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
 formspree_url = "YOUR FORMSPREE URL"
 copyright = "All right reserved copyright © Portio 2020"
