@@ -69,9 +69,10 @@ email = "hello@example.com"
 address = "23 Khan Niketon, Grand Street, NYK."
 opening_hours = "Open from 10am to 6pm (close at 5pm Sundays) "
 
-# [extra.map]
-# latitude = "14.022"
-# longitude = "12.0665"
+[extra.map]
+api_key = "YOUR GOOGLE MAP API"
+latitude = "14.022"
+longitude = "12.0665"
 
 [extra.home]
 enable = true

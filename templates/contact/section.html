@@ -146,7 +146,7 @@
           </form>
         </div>
       </div>
-      {% if config.extra.map.longitude and config.extra.map.latitude %}
+      {% if config.extra.map.api_key and config.extra.map.longitude and config.extra.map.latitude %}
         <div class="col-lg-6">
           <div id="map" data-lat="{{ config.extra.map.latitude }}" data-long="{{ config.extra.map.longitude }}"></div>
         </div>

@@ -1,4 +1,7 @@
 {% macro javascripts() %}
+{% if config.extra.map.api_key %}
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ config.extra.map.api_key }}&libraries=geometry"></script>
+{% endif %}
 <script src="{{ get_url(path='js/bootstrap.min.js') }}"></script>
 <script src="{{ get_url(path='js/jquery.min.js') }}"></script>
 <script src="{{ get_url(path='js/jquery.waypoints.min.js') }}"></script>
