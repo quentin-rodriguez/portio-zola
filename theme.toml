@@ -1,13 +1,13 @@
-name = "portio-zola"
-description = "It's a transcription of Portio-Hugo theme"
+name = "Portio-Zola"
+description = "Portio-Zola is a minimal, well-formatted and extremely flexible theme"
 licence = "MIT"
-homepage = "https://gitlab.com/quentin117/portio-zola.git"
-min_version = "1.3.0"
+homepage = "https://github.com/quentin-rodriguez/portio-zola.git"
+min_version = "0.20.0"
 demo = "https://staticmania.com/"
 
 [author]
 name = "Quentin Rodriguez"
-repo = "https://gitlab.com/quentin117/portio-zola.git"
+repo = "https://github.com/quentin-rodriguez/portio-zola.git"
 
 [original]
 author = "Static Mania"
