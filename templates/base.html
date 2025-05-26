@@ -1,23 +1,46 @@
-{% import 'macros/header.html' as macros_header %}
-{% import 'macros/footer.html' as macros_footer %}
-{% import 'macros/head.html' as macros_head %}
-{% import 'macros/javascript.html' as macros_js %}
-
-{% set_global lang = config.default_language %}
-{% set_global date_format = config.extra.date_format %}
+{% import 'macros.html' as macros %}
 
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+
+<html lang="{{ config.default_language }}">
     <head>
-        {{ macros_head::seo() }}
-        {{ macros_head::stylesheets() }}
-        {{ macros_js::google_analytics() }}
-        {% block extra_head %}{% endblock %}
+        <title>
+            {% block title %}
+                {{ page.title | default(value=config.title) }}
+            {% endblock %}
+        </title>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta itemprop="name" content="{{ page.title | default(value=config.title) }}">
+        <meta itemprop="description" content="{{ page.description | default(value=config.description) }}"> 
+
+        {% if config.generate_feed %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+        {% endif %}
+
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+        {% endblock %}
+
+        <link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path='images/favicon.ico') }}">
+        <link rel="icon" type="image/x-icon" href="{{ get_url(path='images/favicon.png') }}">
+
+        {% block seo %}
+        {{ macros::ms_application(path="static/images/logo.png") }}
+        {{ macros::icons(path="static/images/logo.png", apple=true, sizes=[57, 72, 76, 114, 120, 144, 152, 180]) }}
+        {{ macros::icons(path="static/images/logo.png", sizes=[16, 32, 36, 48, 72, 96, 144, 192]) }}
+        {{ macros::analytics() }}
+        {% endblock %}
     </head>
 
     <body>
-        {% block header %}
-            {{ macros_header::header() }}
+        {% block navbar %}
+            {% include "partials/navbar.html" %}
         {% endblock %}
 
         <div id="content">
@@ -25,10 +48,22 @@
         </div>
 
         {% block footer %}
-            {{ macros_footer::footer() }} 
+            {% include "partials/footer.html" %}
         {% endblock %}
         
-        {{ macros_js::javascripts() }} 
-        {% block extra_javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% if config.extra.map.api_key %}
+            <script src="https://maps.googleapis.com/maps/api/js?key={{ config.extra.map.api_key }}&libraries=geometry"></script>
+            {% endif %}
+            <script src="{{ get_url(path='js/bootstrap.min.js') }}"></script>
+            <script src="{{ get_url(path='js/jquery.min.js') }}"></script>
+            <script src="{{ get_url(path='js/jquery.waypoints.min.js') }}"></script>
+            <script src="{{ get_url(path='js/gsap.min.js') }}"></script>
+            <script src="{{ get_url(path='js/imageloaded.min.js') }}"></script>
+            <script src="{{ get_url(path='js/magnific-popup.min.js') }}"></script>
+            <script src="{{ get_url(path='js/masonry.min.js') }}"></script>
+            <script src="{{ get_url(path='js/slick.min.js') }}"></script>
+            <script src="{{ get_url(path='js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

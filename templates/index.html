@@ -1,23 +1,12 @@
 {% extends 'base.html' %}
 
-{% import 'macros/header.html' as macros_header %}
-{% import 'macros/footer.html' as macros_footer %}
-{% import 'macros/section/home.html' as macros_home %}
-{% import 'macros/section/about.html' as macros_about %}
-{% import 'macros/section/service.html' as macros_service %}
-{% import 'macros/section/resume.html' as macros_resume %}
-{% import 'macros/section/portfolio.html' as macros_porfolio %}
-{% import 'macros/section/skill.html' as macros_skill %}
-{% import 'macros/section/testimonial.html' as macros_testimonial %}
-{% import 'macros/section/blog.html' as macros_blog %}
-
 {% block content %}
-    {% if config.extra.home %}{{ macros_home::home(config=config.extra.home) }}{% endif %}
-    {% if config.extra.about %}{{ macros_about::about(config=config.extra.about) }}{% endif %}
-    {% if config.extra.service %}{{ macros_service::service(config=config.extra.service) }}{% endif %}
-    {% if config.extra.resume %}{{ macros_resume::resume(config=config.extra.resume ) }}{% endif %}
-    {% if config.extra.portfolio %}{{ macros_porfolio::portfolio(config=config.extra.portfolio) }}{% endif %}
-    {% if config.extra.skill %}{{ macros_skill::skill(config=config.extra.skill) }}{% endif %}
-    {% if config.extra.testimonial %}{{ macros_testimonial::testimonial(config=config.extra.testimonial) }}{% endif %}
-    {% if config.extra.blog %}{{ macros_blog::blog(config=config.extra.blog, format=date_format) }}{% endif %}
+    {% include "partials/sections/home.html" %}
+    {% include "partials/sections/about.html" %}
+    {% include "partials/sections/service.html" %}
+    {% include "partials/sections/resume.html" %}
+    {% include "partials/sections/portfolio.html" %}
+    {% include "partials/sections/skill.html" %}
+    {% include "partials/sections/testimonial.html" %}
+    {% include "partials/sections/blog.html" %}
 {% endblock %}

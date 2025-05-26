@@ -1,8 +1,8 @@
-{% macro home(config) %}
- {% set data = load_data(path=config.file) | default(value=config) %}
-
- {% if config.enable %}
-  <section class="hero" id="home">
+{% if config.extra.home_file %}
+ 
+ {% set home_data = load_data(path=config.extra.home_file) %}
+ 
+ <section class="hero" id="home">
     <div class="hero_background-svg">
       <svg viewBox="0 0 1437 1180">
         <path
@@ -44,10 +44,10 @@
               </svg>
             </div>
             <div class="mb-5">  
-              {% if data.infos.title %}<span class="top-title pre-line">{{ data.infos.title }}</span>{% endif %}
-              {{ data.infos.description | markdown | safe }}
+              {% if home_data.infos.title %}<span class="top-title pre-line">{{ home_data.infos.title }}</span>{% endif %}
+              {{ home_data.infos.description | markdown | safe }}
             </div>
-            <a href="{{ get_url(path=data.infos.button_url) }}">{{ data.infos.button_name }}</a>
+            <a href="{{ get_url(path=home_data.infos.button_url) }}">{{ home_data.infos.button_name }}</a>
           </div>
         </div>
         <div class="col-lg-6">
@@ -56,7 +56,7 @@
               <img src="{{ get_url(path='images/hero/figure-svg.svg') }}" alt="figure-svg" />
             </div>
             <img
-              src="{{ get_url(path=data.infos.image) }}"
+              src="{{ get_url(path=home_data.infos.image) }}"
               alt="hero-image"
               style="
                 mask: url({{ get_url(path='images/hero/hero-mask-svg.png') }});
@@ -68,11 +68,11 @@
             {% if data.infos.video_thumb %}
             <div class="hero_figure-popup">
               <div class="thumb">
-                <img src="{{ get_url(path=data.infos.video_thumb) }}" alt="popup" />
+                <img src="{{ get_url(path=home_data.infos.video_thumb) }}" alt="popup" />
               </div>
               {% if data.infos.video_url %}
               <a
-                href="{{ data.infos.video_url }}"
+                href="{{ home_data.infos.video_url }}"
                 type="button"
                 class="popup-button"
               >
@@ -98,4 +98,3 @@
     </div>
   </section>
  {% endif %}
-{% endmacro  %}

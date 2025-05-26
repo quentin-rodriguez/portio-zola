@@ -1,0 +1,26 @@
+{% macro ms_application(path, color="#ffffff") %}
+    {% set image = resize_image(path=path, width=144, height=144, format="png", op="scale") %}
+
+    <meta name="msapplication-TileColor" content="{{ color }}">
+    <meta name="msapplication-TileImage" content="{{ image.url }}">
+{% endmacro %}
+
+{% macro icons(path, sizes, apple=false, op="scale") %}
+    {% for size in sizes %}
+        {% set image = resize_image(path=path, width=size, height=size, format="png", op=op) %}
+        
+        <link {% if apple %}rel="icon" type="image/png"{% else %}rel="apple-touch-icon"{% endif %} sizes="{{ size }}x{{ size }}" href="{{ image.url }}">
+    {% endfor %}
+{% endmacro %}
+
+{% macro analytics() %}
+    {% if config.extra.ganalytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{config.extra.ganalytics}}"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ config.extra.ganalytics }}');
+      </script>
+    {% endif %}
+{% endmacro  %}

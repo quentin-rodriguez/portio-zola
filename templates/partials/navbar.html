@@ -1,9 +1,9 @@
-{% macro header() %}
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a href="{{ config.base_url }}" class="navbar-brand">
             <img src="{{ get_url(path=config.extra.logo) }}" alt="site-logo">
         </a>
+        
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
             <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,10 @@
                   </li>
                 {% endfor %}
             </ul>
+
             <div class="navbar-nav">
-                <a href="{{ get_url(path='contact') }}" class="hire_button">{{  trans(key="contact", lang=lang) }}</a>
+                <a href="{{ get_url(path='contact') }}" class="hire_button">{{  trans(key="contact", lang=config.default_language) }}</a>
             </div>
         </div>
     </div>
 </nav>
-{% endmacro %}

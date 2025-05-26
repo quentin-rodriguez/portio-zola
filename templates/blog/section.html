@@ -1,12 +1,5 @@
 {% extends 'base.html' %}
 
-{% import 'macros/header.html' as header %}
-{% import 'macros/footer.html' as footer %}
-
-{% block header %}
-    {{ header::header() }}
-{% endblock %}
-
 {% block content %} 
 <header class="breadCrumb">
 	<div class="svg-img">
@@ -67,9 +60,4 @@
 		</div>
 	</div>
 </section>
-{% endblock %}
-
-
-{% block footer %}
-    {{ footer::footer() }}
 {% endblock %}
