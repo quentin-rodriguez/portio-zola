@@ -1,3 +1,26 @@
+{% macro pagination(paginator) %}
+{% if paginator and paginator.number_pagers > 1 %}
+<nav aria-label="Page navigation" class="w-100">
+  <ul class="pagination justify-content-center pagination-lg">
+    {% for pager in range(start=1, end=paginator.number_pagers + 1) %}
+        <li class="page-item {% if pager == paginator.current_index %}active{% endif %}">
+          <a class="page-link" href="{{ paginator.base_url ~ pager }}">{{ pager }}</a>
+        </li>
+    {% endfor %}
+
+    {% if pagintor.next %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.next }}" rel="next">
+        →
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+{% endmacro %}
+
+
 {% macro ms_application(path, color="#ffffff") %}
     {% set image = resize_image(path=path, width=144, height=144, format="png", op="scale") %}
 

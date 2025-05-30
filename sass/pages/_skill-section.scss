@@ -102,41 +102,43 @@
       }
     }
     &_item {
-      &.js-animation {
-        transition: all 0.3s ease;
-        .progress {
+      .progress {
           width: 100%;
-          background: #e7eef2;
           height: 10px;
           border-radius: 5px;
+          
+          progress::-moz-progress-bar {
+            
+          }
+
           .progress-bar {
             border-radius: 5px;
+            width: 100%;
             position: relative;
-            animation: animate-positive 3000ms;
+            background: #e7eef2;
+
+            // padding-bottom: attr(value type(#{'<percentage>'}));
+            transition: padding-bottom 5s;
+            transform-origin: 0 0;
+            transform: rotate(-90deg) translateX(-60px);
             background: #5d78ff;
           }
         }
-      }
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
-      h6 {
-        display: inline-block;
-        font-family: $secondary-font;
-        font-weight: 400;
-        font-size: 16px;
-      }
-      .progress-value {
-        float: right;
-        font-family: $secondary-font;
-        font-size: 16px;
-        font-weight: 400;
-      }
     }
-  }
-}
-@keyframes animate-positive {
-  0% {
-    width: 0;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    h6 {
+      display: inline-block;
+      font-family: $secondary-font;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .progress-value {
+      float: right;
+      font-family: $secondary-font;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 }

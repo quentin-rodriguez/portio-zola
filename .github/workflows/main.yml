@@ -1,5 +1,10 @@
-on: push
 name: Build and deploy Gihub Pages
+
+on:
+  push:
+    branches:
+      - master
+      
 jobs:
   build:
     runs-on: ubuntu-latest

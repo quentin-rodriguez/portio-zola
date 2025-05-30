@@ -65,12 +65,12 @@
                 mask-position: center center;
               "
             />
-            {% if data.infos.video_thumb %}
+            {% if home_data.infos.video_thumb %}
             <div class="hero_figure-popup">
               <div class="thumb">
                 <img src="{{ get_url(path=home_data.infos.video_thumb) }}" alt="popup" />
               </div>
-              {% if data.infos.video_url %}
+              {% if home_data.infos.video_url %}
               <a
                 href="{{ home_data.infos.video_url }}"
                 type="button"

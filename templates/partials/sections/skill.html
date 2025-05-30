@@ -49,7 +49,7 @@
                               <h6> {{ skill.title }} </h6>
                               <div class="progress-value"><span>{{ skill.percent }}</span>%</div>
                               <div class="progress">
-                              <div class="progress-bar" style="width: {{ skill.percent }}%;" aria-valuemin="0" aria-valuemax="{{ skill.percent }}"></div>
+                                <progress class="progress-bar" value="{{ skill.percent }}" max="100"></progress>
                               </div>
                           </div>
                       {% endfor %}
