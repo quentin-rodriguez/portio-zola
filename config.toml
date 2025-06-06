@@ -72,6 +72,6 @@ address = "23 Khan Niketon, Grand Street, NYK."
 opening_hours = "Open from 10am to 6pm (close at 5pm Sundays) "
 
 [extra.map]
-api_key = "YOUR GOOGLE MAP API"
+api_key = "AIzaSyAU0RiMpTeSVD-3dDTVU6apKDjdhDcyrtw"
 latitude = "14.022"
 longitude = "12.0665"

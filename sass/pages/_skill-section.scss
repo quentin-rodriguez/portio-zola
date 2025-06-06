@@ -107,21 +107,21 @@
           height: 10px;
           border-radius: 5px;
           
-          progress::-moz-progress-bar {
-            
-          }
-
           .progress-bar {
             border-radius: 5px;
             width: 100%;
             position: relative;
             background: #e7eef2;
 
-            // padding-bottom: attr(value type(#{'<percentage>'}));
-            transition: padding-bottom 5s;
-            transform-origin: 0 0;
-            transform: rotate(-90deg) translateX(-60px);
-            background: #5d78ff;
+            &::-moz-progress-bar {
+              transition: padding-bottom 2s;
+              padding-bottom: var(--value);
+              height: 0;
+              transform-origin: 0 0;
+              transform: rotate(-90deg) translateX(-15px);
+              padding-left: 15px;
+              background: #5d78ff;
+            }
           }
         }
     }

@@ -25,19 +25,14 @@
       }
     }
   }
-  &-item {
-    width: 50%;
+  &-item {   
     padding: 30px;
-    &:nth-child(4n-3) {
-      padding-right: 70px;
-    }
-    &:nth-child(4n-1) {
-      padding-left: 90px;
-    }
+
     &-grid {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 -30px;
+      columns: 2;
+      column-gap: 60px;
+      width: 100%;
+      height: 100%;
     }
     &-thumb {
       transition: 0.3s ease;

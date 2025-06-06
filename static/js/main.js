@@ -27,32 +27,6 @@
       ],
     });
   
-    // skill count
-  
-    // $(".skill__progress").waypoint(
-    //   function () {
-    //     $(".progress-value span").each(function () {
-    //       $(this)
-    //         .prop("Counter", 0)
-    //         .animate(
-    //           {
-    //             Counter: $(this).text(),
-    //           },
-    //           {
-    //             duration: 3000,
-    //             easing: "swing",
-    //             step: function (now) {
-    //               $(this).text(Math.ceil(now));
-    //             },
-    //           }
-    //         );
-    //     });
-    //     $(".skill__progress_item").addClass("js-animation");
-    //     this.destroy();
-    //   },
-    //   { offset: "80%" }
-    // );
-  
     // Testimonial slider
     $(".testimonial__slider").slick({
       infinite: true,
@@ -74,28 +48,7 @@
         },
       ],
     });
-  
-    // Modal Popup
-    $(".popup-button").magnificPopup({
-      type: "iframe",
-      iframe: {
-        patterns: {
-          youtube: {
-            index: "youtube.com/",
-            id: "v=",
-            src: "//www.youtube.com/embed/tgbNymZ7vqY",
-          },
-        },
-      },
-    });
-  
-    $(".portfolio-item-grid").masonry({
-      // options
-      itemSelector: ".portfolio-item",
-      columnWidth: 200,
-    });
 
-  
   // G-Map
   /**
    * Created by Kausar on 06/10/2016.
@@ -352,4 +305,5 @@ function processScroll() {
 }
 
 hamburger.onclick = processClick
+window.onload = processScroll
 window.onscroll = processScroll
