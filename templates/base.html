@@ -22,6 +22,7 @@
         {% endif %}
 
         {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
         {% endblock %}
@@ -51,13 +52,9 @@
         {% endblock %}
         
         {% block javascripts %}
-            {% if config.extra.map.api_key %}
-            <script src="https://maps.googleapis.com/maps/api/js?key={{ config.extra.map.api_key }}&libraries=geometry"></script>
-            {% endif %}
-            <script src="{{ get_url(path='js/bootstrap.min.js') }}"></script>
-            <script src="{{ get_url(path='js/jquery.min.js') }}"></script>
-            <script src="{{ get_url(path='js/slick.min.js') }}"></script>
-            <script src="{{ get_url(path='js/main.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="{{ get_url(path='js/bootstrap.min.js') }}"></script>    
+        <script src="{{ get_url(path='js/main.js') }}"></script>
         {% endblock %}
     </body>
 </html>

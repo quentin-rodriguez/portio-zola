@@ -1,46 +1,45 @@
-{% macro testimonial(config) %}
- {% set data = load_data(path=config.file) | default(value=config) %}
- 
- {% if config.enable %}
-   <section class="section testimonial">
-      <div class="testimonial__background_shape">
-          <svg viewBox="0 0 1920 79">
-              <path d="M0 0h1920v79L0 0z" data-name="Path 1450" />
-          </svg>
-      </div>
-      <div class="container">
-          <div class="row text-center">
-              <div class="col-lg-6 offset-lg-3">
-                  <div class="testimonial__header">
-                    {% if data.infos.top_title %}
-                        <span>{{ data.infos.top_title }}</span>
-                    {% endif %}
-                    <h1>{{ data.infos.title }}</h1>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="testimonial__slider">
-                      {% for testimonial in data.infos.testimonials %}
-                          <div class="testimonial__slider_item">
-                              <ul class="testimonial__slider_item-rating">
-                                  {% for rate in range(end=5) %} 
-                                      {% if rate < testimonial.star %}
-                                          <li><i class="lni lni-star-filled"></i></li>
-                                      {% else %}
-                                          <li><i class="lni lni-star-filled inactive"></i></li>
-                                      {% endif %}
-                                  {% endfor %}
-                              </ul>
-                              <p class="testimonial__slider_item-content">{{ testimonial.comment }}</p>
-                              <p class="testimonial__slider_item-author"><span>{{ testimonial.name }}</span> | {{ testimonial.time }}</p>
-                          </div>
-                      {% endfor %}
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
- {% endif %}
-{% endmacro  %}
+{% if config.extra.testimonial_file %}
+
+{% set testimonial_data = load_data(path=config.extra.testimonial_file) %}
+
+<section class="section testimonial">
+   <div class="testimonial__background_shape">
+       <svg viewBox="0 0 1920 79">
+           <path d="M0 0h1920v79L0 0z" data-name="Path 1450" />
+       </svg>
+   </div>
+   <div class="container">
+       <div class="row text-center">
+           <div class="col-lg-6 offset-lg-3">
+               <div class="testimonial__header">
+                 {% if testimonial_data.infos.top_title %}
+                     <span>{{ testimonial_data.infos.top_title }}</span>
+                 {% endif %}
+                 <h1>{{ testimonial_data.infos.title }}</h1>
+               </div>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-12">
+               <div class="testimonial__slider">
+                   {% for testimonial in testimonial_data.infos.testimonials %}
+                       <div class="testimonial__slider_item">
+                           <ul class="testimonial__slider_item-rating">
+                               {% for rate in range(end=5) %} 
+                                   {% if rate < testimonial.star %}
+                                       <li><i class="lni lni-star-filled"></i></li>
+                                   {% else %}
+                                       <li><i class="lni lni-star-filled inactive"></i></li>
+                                   {% endif %}
+                               {% endfor %}
+                           </ul>
+                           <p class="testimonial__slider_item-content">{{ testimonial.comment }}</p>
+                           <p class="testimonial__slider_item-author"><span>{{ testimonial.name }}</span> | {{ testimonial.time }}</p>
+                       </div>
+                   {% endfor %}
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+{% endif %}

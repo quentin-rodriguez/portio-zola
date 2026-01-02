@@ -1,31 +1,34 @@
   $(document).ready(function () {
   
+    
+
+
     // service slider
-    $(".service__slider").slick({
-      infinite: false,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      dots: false,
-      arrows: false,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            dots: true,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-          },
-        },
-      ],
-    });
+    // $(".service__slider").slick({
+    //   infinite: false,
+    //   slidesToShow: 3,
+    //   slidesToScroll: 1,
+    //   dots: false,
+    //   arrows: false,
+    //   responsive: [
+    //     {
+    //       breakpoint: 992,
+    //       settings: {
+    //         slidesToShow: 2,
+    //         slidesToScroll: 1,
+    //         dots: true,
+    //       },
+    //     },
+    //     {
+    //       breakpoint: 768,
+    //       settings: {
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+    //         dots: true,
+    //       },
+    //     },
+    //   ],
+    // });
   
     // Testimonial slider
     $(".testimonial__slider").slick({
@@ -49,10 +52,6 @@
       ],
     });
 
-  // G-Map
-  /**
-   * Created by Kausar on 06/10/2016.
-   */
   window.marker = null;
   
   function initialize() {
@@ -60,182 +59,7 @@
     var lat = $("#map").data("lat");
     var long = $("#map").data("long");
     var mapCenter = new google.maps.LatLng(lat, long);
-    var style = [
-      {
-        featureType: "water",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#e9e9e9",
-          },
-          {
-            lightness: 17,
-          },
-        ],
-      },
-      {
-        featureType: "landscape",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#f5f5f5",
-          },
-          {
-            lightness: 20,
-          },
-        ],
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry.fill",
-        stylers: [
-          {
-            color: "#ffffff",
-          },
-          {
-            lightness: 17,
-          },
-        ],
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry.stroke",
-        stylers: [
-          {
-            color: "#ffffff",
-          },
-          {
-            lightness: 29,
-          },
-          {
-            weight: 0.2,
-          },
-        ],
-      },
-      {
-        featureType: "road.arterial",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#ffffff",
-          },
-          {
-            lightness: 18,
-          },
-        ],
-      },
-      {
-        featureType: "road.local",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#ffffff",
-          },
-          {
-            lightness: 16,
-          },
-        ],
-      },
-      {
-        featureType: "poi",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#f5f5f5",
-          },
-          {
-            lightness: 21,
-          },
-        ],
-      },
-      {
-        featureType: "poi.park",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#dedede",
-          },
-          {
-            lightness: 21,
-          },
-        ],
-      },
-      {
-        elementType: "labels.text.stroke",
-        stylers: [
-          {
-            visibility: "on",
-          },
-          {
-            color: "#ffffff",
-          },
-          {
-            lightness: 16,
-          },
-        ],
-      },
-      {
-        elementType: "labels.text.fill",
-        stylers: [
-          {
-            saturation: 36,
-          },
-          {
-            color: "#333333",
-          },
-          {
-            lightness: 40,
-          },
-        ],
-      },
-      {
-        elementType: "labels.icon",
-        stylers: [
-          {
-            visibility: "off",
-          },
-        ],
-      },
-      {
-        featureType: "transit",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#f2f2f2",
-          },
-          {
-            lightness: 19,
-          },
-        ],
-      },
-      {
-        featureType: "administrative",
-        elementType: "geometry.fill",
-        stylers: [
-          {
-            color: "#fefefe",
-          },
-          {
-            lightness: 20,
-          },
-        ],
-      },
-      {
-        featureType: "administrative",
-        elementType: "geometry.stroke",
-        stylers: [
-          {
-            color: "#fefefe",
-          },
-          {
-            lightness: 17,
-          },
-          {
-            weight: 1.2,
-          },
-        ],
-      },
-    ];
+    
     var mapOptions = {
       // SET THE CENTER
       center: mapCenter,
@@ -257,12 +81,6 @@
   
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
     // SET THE MAP TYPE
-    var mapType = new google.maps.StyledMapType(style, {
-      name: "Grayscale",
-    });
-    map.mapTypes.set("grey", mapType);
-    map.setMapTypeId("grey");
-    //CREATE A CUSTOM PIN ICON
     var marker_image = $("#map").data("pin");
     var pinIcon = new google.maps.MarkerImage(
       marker_image,
@@ -305,5 +123,12 @@ function processScroll() {
 }
 
 hamburger.onclick = processClick
-window.onload = processScroll
+window.onload = function() {
+  new Swiper(".service__slide", {
+    slidesPerView: 3,
+    centeredSlides: true,
+    grabCursor: true
+  });
+  processScroll();
+};
 window.onscroll = processScroll
