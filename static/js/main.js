@@ -110,10 +110,6 @@ function animateProgress() {
     requestAnimationFrame(() => {
         document.querySelectorAll("#skill progress").forEach((el) => {
             const value = el.getAttribute("value");
-
-            if (typeof value == "string") {
-                el.style.width = `${value}%`;
-            }
         });
     });
 }
