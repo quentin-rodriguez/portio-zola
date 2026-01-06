@@ -1,4 +1,16 @@
 [tools]
 zola = "0.21.0"
 
+[tasks.check]
+run = "zola check --drafts"
+description = ""
+
+[tasks.serve]
+run = "zola serve --fast --force"
+description = ""
+
+[tasks.build]
+run = "zola build --minify"
+description = ""
+
 

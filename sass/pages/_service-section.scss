@@ -74,6 +74,14 @@
         }
     }
     &__slider{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      
+        @include mobile {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+
         &_item{
             margin: 15px;
             padding: 30px;
@@ -108,55 +116,6 @@
                 font-size: 16px;
                 line-height: 30px;
                 margin: 0;
-            }
-        }
-        .slick-list {
-            overflow: visible;
-        }
-        .slick-dots{
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-            li{
-                margin: 0;
-                list-style: none;
-                height: 8px;
-                width: 8px;
-                &:not(:last-child){
-                    margin-right: 15px;
-                }
-                button{
-                    cursor: pointer;
-                    height: 100%;
-                    width: 100%;
-                    background: #C2C8CC;
-                    border-radius: 50%;
-                    transition: all .3s ease;
-                    display: block;
-                    padding: 0;
-                    text-indent: -9999px;
-                    &:focus {
-                        outline: 0;
-                    }
-                    &:hover{
-                        background: $primary-color;
-                    }
-                }
-                &.slick-active{
-                    height: 10px;
-                    width: 10px;
-                    border-radius: 50%;
-                    button{
-                        background-color: $primary-color;
-                    }
-                }
-            }
-        }
-        .slick-slide {
-            &:focus{
-                outline: 0;
             }
         }
     }

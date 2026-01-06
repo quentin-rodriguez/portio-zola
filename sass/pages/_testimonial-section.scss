@@ -41,13 +41,28 @@
     }
   }
   &__slider {
+    &_button {
+      width: 15px !important;
+      height: 15px !important;
+      margin: 0 .5rem !important;
+      background-color: #bfc4c8 !important;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: $primary-color !important;
+      }
+
+      &.active  {
+        background-color: $primary-color !important;
+      }
+    }
+
     &_item {
       background: $white;
       border-radius: 20px;
-      padding: 60px 50px;
-      margin: 30px 25px 60px;
+      padding: 65px 50px;
+      margin-bottom: 95px;
       @include tablet {
-        margin: 30px 0 40px;
         padding: 50px 30px;
       }
       &-rating {
@@ -92,52 +107,6 @@
           transform: translateY(-50%);
           background: #282f49;
         }
-      }
-    }
-    .slick-dots {
-      display: flex;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-      li {
-        margin: 0;
-        list-style: none;
-        height: 8px;
-        width: 8px;
-        &:not(:last-child) {
-          margin-right: 15px;
-        }
-        button {
-          cursor: pointer;
-          height: 100%;
-          width: 100%;
-          background: #c2c8cc;
-          border-radius: 50%;
-          transition: all 0.3s ease;
-          display: block;
-          padding: 0;
-          text-indent: -9999px;
-          &:focus {
-            outline: 0;
-          }
-          &:hover {
-            background: $primary-color;
-          }
-        }
-        &.slick-active {
-          height: 10px;
-          width: 10px;
-          border-radius: 50%;
-          button {
-            background-color: $primary-color;
-          }
-        }
-      }
-    }
-    .slick-slide {
-      &:focus {
-        outline: 0;
       }
     }
   }
