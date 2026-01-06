@@ -107,10 +107,18 @@ function processClick(event) {
 }
 
 function animateProgress() {
-    requestAnimationFrame(() => {
-        document.querySelectorAll("#skill progress").forEach((el) => {
-            const value = el.getAttribute("value");
-        });
+    document.querySelectorAll("#skill progress").forEach((el) => {
+        const max = parseInt(el.dataset.max);
+        let val = parseInt(el.getAttribute("value"));
+        const id = setInterval(frame, 10);
+
+        function frame() {
+            if (val <= max) {
+                el.setAttribute("value", val++);
+            } else {
+                clearInterval(id);
+            }
+        }
     });
 }
 
@@ -124,9 +132,14 @@ function processScroll() {
     }
 }
 
-hamburger.onclick = processClick;
-window.onload = function () {
+function onLoad() {
     processScroll();
     animateProgress();
-};
-window.onscroll = processScroll;
+}
+
+function onScroll() {
+}
+
+hamburger.onclick = processClick;
+window.onload = onLoad;
+window.onscroll = onScroll;

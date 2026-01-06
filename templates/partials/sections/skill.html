@@ -49,7 +49,7 @@
                               <h6> {{ skill.title }} </h6>
                               <div class="progress-value"><span>{{ skill.percent }}</span>%</div>
                               <div class="progress_item">
-                                  <progress value="{{ skill.percent }}" max="100">
+                                  <progress value="0" max="100" data-max="{{ skill.percent }}">
                               </div>
                           </div>
                       {% endfor %}
