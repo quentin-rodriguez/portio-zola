@@ -10,6 +10,11 @@ build_search_index = true
 
 default_language = "en"
 
+taxonomies = [
+    {name = "tags", feed = true },
+    {name = "categories", feed = true},
+]
+
 [translations]
 contact = "Hire Me Now"
 see_details = "See Details"
@@ -39,7 +44,6 @@ footer_logo = "images/logo.png"
 formspree_url = "YOUR FORMSPREE URL"
 copyright = "All right reserved copyright © Portio 2020"
 display_cta = true
-
 
 menus = [
   { name = "Home",    url = "#home" },

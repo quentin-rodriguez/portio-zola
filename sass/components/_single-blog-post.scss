@@ -109,4 +109,24 @@
             }
         }
     }
+
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  li {
+    list-style: none;
+    z-index: 2;
+    i {
+      padding-right: 7px;
+    }
+    a {
+      color: #7e7e8a;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
 }
