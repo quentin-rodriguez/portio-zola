@@ -19,7 +19,7 @@
     <ul class="post-meta">
       <li>
         <i class="fa fa-calendar"></i>
-        {{ page.date }}
+        {{ page.date | date(format="%B %d, %Y") }}
       </li>
       <li>
         <i class="fa fa-clock-o"></i>
@@ -28,7 +28,7 @@
       {% if page.taxonomies.tags %}
       <li>
         <i class="fa fa-tag"></i>
-        {% for tag in config.taxonomies.tags %}
+        {% for tag in page.taxonomies.tags %}
           <a class="text-capitalize" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>
         {% endfor %}
       </li>

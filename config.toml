@@ -11,8 +11,8 @@ build_search_index = true
 default_language = "en"
 
 taxonomies = [
-    {name = "tags", feed = true },
-    {name = "categories", feed = true},
+    {name = "tags", feed = true, render = true, paginate_by = 6},
+    {name = "categories", feed = true, render = true, paginate_by = 6},
 ]
 
 [translations]
