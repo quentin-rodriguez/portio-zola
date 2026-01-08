@@ -55,23 +55,25 @@
 
 <section class="section blog-page">
   <div class="container">
-    <div class="d-flex">
+    <div class="d-flex justify-content-center flex-wrap">
       {% for page in term.pages %}
-      <div class="card col-lg-4">
+      <div class="card col-lg-3 m-2">
         <img class="card-img-top" src="{{ get_url(path=page.extra.feature_image) }}" alt="post-image">
         <div class="card-body">
-            <h5 class="card-title">{{ page.title }}</h5>    
-            <p class="card-text">
-                <small class="text-body-secondary">
-                    {{ page.date | date(format="%B %d, %Y") }}
-                </small>
-            </p>
+            <a class="text-reset text-decoration-none" href="{{ page.permalink }}">
+                <h5 class="card-title">{{ page.title }}</h5>
+                <p class="card-text">
+                    <small class="text-body-secondary">
+                        {{ page.date | date(format="%B %d, %Y") }}
+                    </small>
+                </p>
+            </a>
         </div>
       </div>
       {% endfor %}
-
-      {{ macros::pagination(paginator=paginator)}}
     </div>
+
+    {{ macros::pagination(paginator=paginator) }}
   </div>
 </section>
 {% endblock %}

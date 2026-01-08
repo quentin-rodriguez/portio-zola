@@ -54,11 +54,11 @@
 
 <section class="section blog-page">
   <div class="container">
-      <div class="d-flex">
+      <div class="d-flex justify-content-center flex-wrap">
         {% for term in terms %}
-            <div class="card col-md-4 text-center">
+            <div class="card col-lg-3 m-2 text-center">
                 <div class="card-body">
-                    <a class="text-dark" href="{{ term.permalink }}">{{ term.name }}</a>
+                    <a class="text-reset text-decoration-none" href="{{ term.permalink }}">{{ term.name }}</a>
                 </div>
             </div>
         {% endfor %}

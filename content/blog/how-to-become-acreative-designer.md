@@ -2,6 +2,10 @@
 title = "How to become acreative designer"
 date = 2020-07-14
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/9.jpg"
 post_image = "images/single-blog/feature-image.jpg"

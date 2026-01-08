@@ -2,6 +2,10 @@
 title = "Designers thoughts about mobile UI"
 date = 2020-07-12
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/5.jpg"
 post_image = "images/blog/feature-image.jpg"

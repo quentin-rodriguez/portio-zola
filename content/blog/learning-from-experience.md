@@ -2,6 +2,10 @@
 title = "Learning from experience"
 date = 2020-07-14
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/6.jpg"
 post_image = "images/blog/feature-image.jpg"

@@ -2,6 +2,10 @@
 title = "World's Most Famous App Developers and Designers"
 date = 2020-07-17
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/1.jpg"
 post_image = "images/blog/feature-image.jpg"

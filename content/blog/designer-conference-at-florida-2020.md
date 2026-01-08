@@ -2,6 +2,10 @@
 title =  "Designer Conference at Florida 2020"
 date = 2022-07-13
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/2.jpg"
 post_image = "images/blog/feature-image.jpg"

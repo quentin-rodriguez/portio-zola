@@ -2,6 +2,10 @@
 title = "New designers limitations"
 date = 2020-07-15
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/3.jpg"
 post_image = "images/blog/feature-image.jpg"

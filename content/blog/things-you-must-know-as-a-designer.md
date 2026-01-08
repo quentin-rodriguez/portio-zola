@@ -2,6 +2,10 @@
 title = "Things you must know as a designer"
 date = 2020-07-16
 
+[taxonomies]
+categories = ["blog"]
+tags = ["website"]
+
 [extra]
 feature_image = "images/blog/posts/4.jpg"
 post_image = "images/single-blog/feature-image.jpg"
