@@ -20,6 +20,26 @@
 {% endif %}
 {% endmacro %}
 
+{% macro openstreetmap(delta, layer="mapnik", class="col-lg-6") %}
+    {% if config.extra.map.longitude and config.extra.map.latitude %}
+        {% set lng = config.extra.map.longitude | float %}
+        {% set lat = config.extra.map.latitude |  float %}
+    
+        {% set min_lat = lat - delta %}
+        {% set max_lat = lat + delta %}
+        {% set min_lng = lng - delta %}
+        {% set max_lng = lng + delta %}
+    
+        {% set bbox = min_lng ~ "," ~ min_lat ~ "," ~ max_lng ~ "," ~ max_lat %}
+        
+        <div class="{{ class }}">
+            <iframe loading="lazy" 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox={{ bbox }}&layer={{ layer }}&marker={{ lat }}%2C{{ lng }}">
+        </div>
+    {% endif %}
+{% endmacro %}
 
 {% macro ms_application(path, color="#ffffff") %}
     {% set image = resize_image(path=path, width=144, height=144, format="png", op="scale") %}

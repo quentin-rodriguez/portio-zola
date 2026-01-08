@@ -1,13 +1,6 @@
 {% extends 'base.html' %}
 
-
-{% block javascripts %}
-  {% if config.extra.map.api_key %}
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ config.extra.map.api_key }}&libraries=geometry"></script>
-  {% endif %}
-
-  {{ super() }}
-{% endblock %}
+{% import "macros.html" as macros %}
 
 {% block content %}
 <header class="breadCrumb">
@@ -155,11 +148,8 @@
           </form>
         </div>
       </div>
-      {% if config.extra.map.api_key and config.extra.map.longitude and config.extra.map.latitude %}
-        <div class="col-lg-6">
-          <div id="map" data-lat="{{ config.extra.map.latitude }}" data-long="{{ config.extra.map.longitude }}"></div>
-        </div>
-      {% endif %}
+
+      {{ macros::openstreetmap(delta=0.0002) }}
     </div>
   </div>
 </section>
