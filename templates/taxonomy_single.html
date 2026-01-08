@@ -45,11 +45,7 @@
         <h3 class="breadCrumb__title text-capitalize">{{ taxonomy.name }}</h3>
         <nav aria-label="breadcrumb" class="d-flex justify-content-center">
           <ol class="breadcrumb align-items-center">
-              <li>
-                  {% block description %}
-                    Showing all posts
-                  {% endblock %}
-              </li>
+            <li>{{ trans(key=taxonomy.name ~ "_description") }} "{{ term.name }}"</li>
           </ol>
         </nav>
       </div>
@@ -59,19 +55,17 @@
 
 <section class="section blog-page">
   <div class="container">
-    <div class="row">
+    <div class="d-flex">
       {% for page in term.pages %}
-      <div class="col-lg-4">
-        <div class="blog-page__item">
-          <div class="blog-page__item-thumb">
-            <img src="{{ get_url(path=page.extra.feature_image) }}" alt="post-image" />
-          </div>
-          <div class="blog-page__item-content bg-white">
-            <span class="small">{{ page.date | date(format="%B %d, %Y") }}</span>
-            <h5 class="mb-0">
-              <a class="text-dark" href="{{ page.permalink }}">{{ page.title }}</a>
-            </h5>
-          </div>
+      <div class="card col-lg-4">
+        <img class="card-img-top" src="{{ get_url(path=page.extra.feature_image) }}" alt="post-image">
+        <div class="card-body">
+            <h5 class="card-title">{{ page.title }}</h5>    
+            <p class="card-text">
+                <small class="text-body-secondary">
+                    {{ page.date | date(format="%B %d, %Y") }}
+                </small>
+            </p>
         </div>
       </div>
       {% endfor %}

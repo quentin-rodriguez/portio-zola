@@ -54,15 +54,15 @@
 
 <section class="section blog-page">
   <div class="container">
-    <div class="row">
-      <ul>
+      <div class="d-flex">
         {% for term in terms %}
-            <li>
-                <a class="text-dark" href="{{ term.permalink }}">{{ term.name }}</a>
-            </li>
+            <div class="card col-md-4 text-center">
+                <div class="card-body">
+                    <a class="text-dark" href="{{ term.permalink }}">{{ term.name }}</a>
+                </div>
+            </div>
         {% endfor %}
-      </ul>
-    </div>
+      <div>
   </div>
 </section>
 {% endblock %}

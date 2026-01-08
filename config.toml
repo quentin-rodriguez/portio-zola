@@ -11,8 +11,8 @@ build_search_index = true
 default_language = "en"
 
 taxonomies = [
-    {name = "tags", feed = true, render = true, paginate_by = 6},
-    {name = "categories", feed = true, render = true, paginate_by = 6},
+    { name = "tags", feed = true, render = true, paginate_by = 9 },
+    { name = "categories", feed = true, render = true, paginate_by = 9 },
 ]
 
 [translations]
@@ -22,6 +22,8 @@ sitemap = "Sitemap"
 address = "Address"
 phone = "Téléphone"
 email = "Email"
+categories_description = "Showing all posts with the category"
+tags_description = "Showing all posts with the tag"
 opening_hours = "Working hours"
 form_title = "Contact form"
 form_button = "Send Message"

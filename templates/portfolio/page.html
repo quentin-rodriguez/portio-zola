@@ -83,10 +83,10 @@
         {{ page.content | markdown | safe }}
       </div>
     </div>
-    {# <div class="row"> #}
-      {# <div class="col-lg-10 offset-lg-1">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
         <div class="case-details-nav">
-          {{ if .PrevInSection }}
+        {% if page.lower %}
           <div class="previous">
             <div class="icon">
               <svg
@@ -109,32 +109,29 @@
             </div>
             <div class="content">
               <span>Prev case</span>
-              <h5 class="title"><a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a></h5>
+              <h5 class="title">
+                  <a href="{{ page.lower.permalink }}">{{ page.lower.title }}</a>
+              </h5>
             </div>
           </div>
-          {{ end }} #}
-          {# <div class="social">
-            {{ $url := printf "%s" .Permalink | absLangURL }}
+          {% endif %}
+          {% if config.extra.socials %}
+          <div class="social">
             <ul>
-              <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}"><i class="fa fa-facebook-official"></i></a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $url }}"><i class="fa fa-linkedin-square"></i></a>
-              </li>
-              <li>
-                <a href="https://twitter.com/intent/tweet?&url={{ $url }}"><i class="fa fa-twitter-square"></i></a>
-              </li>
+                {% for social in config.extra.socials %} 
+                <li>
+                    <a href="{{ social.url }}"><i class="lni lni-{{ social.icon }}"></i></a>
+                </li>
+              {% endfor %}
             </ul>
-          </div> #}
-          {# {{ if .NextInSection }}
+          </div>
+          {% endif %}
+          {% if page.higher %}
           <div class="next">
             <div class="content">
               <span>Next case</span>
               <h5 class="title">
-                <a href="{{ .NextInSection.Permalink }}"
-                  >{{ .NextInSection.Title }}</a
-                >
+                <a href="{{ page.higher.permalink }}">{{ page.higher.title }}</a>
               </h5>
             </div>
             <div class="icon">
@@ -157,12 +154,10 @@
               </svg>
             </div>
           </div>
-          {{ end }} #}
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
 {% endblock %}
