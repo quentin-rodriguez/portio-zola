@@ -1,44 +1,9 @@
 # Portio-Zola
 
-Portio-Zola is a minimal, well-formatted theme that is extremely flexible and can be changed in whole or in part as required.<br>
+Portio-Zola is a minimal, well-formatted theme that is extremely flexible and can be changed in whole or in part as required.
+
 This theme is based on [Portio-Hugo](https://github.com/StaticMania/portio-hugo.git), with all the features mentioned below.
 
-## 📂 Architecture
-
-```txt
-.
-├── content
-│   ├── blog
-│   ├── contact
-│   └── portfolio
-├── sass
-│   ├── base
-│   ├── components
-│   ├── pages
-│   ├── utilities
-│   └── vendors
-├── static
-│   ├── css
-│   ├── data
-│   ├── fonts
-│   ├── images
-│   │   ├── about
-│   │   ├── blog
-│   │   │   └── posts
-│   │   ├── contact
-│   │   ├── hero
-│   │   ├── portfolio
-│   │   ├── service
-│   │   └── skill
-│   └── js
-└── templates
-    ├── blog
-    ├── contact
-    ├── macros
-    │   └── section
-    ├── portfolio
-    └── shortcodes
-```
 
 ## 💻 Installation
 
@@ -51,13 +16,8 @@ zola init <PROJECT_NAME>
 cd <PROJECT_NAME>
 ```
 
-3. Add a `.git` folder to your project
 
-```sh
-git init
-```
-
-4. Add the **Portio-Zola** theme to the project with either a `submodule` or a `clone`
+3. Add the **Portio-Zola** theme to the project with either a `submodule` or a `clone`
 
 ```sh
 # Submodule
@@ -67,13 +27,13 @@ git submodule add https://github.com/quentin-rodriguez/portio-zola.git themes/po
 git clone https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zola
 ```
 
-5. Copy the theme's `config.toml` file into your project
+6. Copy the theme's `config.toml` file into your project
 
 ```sh
 cp themes/portio-zola/config.toml .
 ```
 
-6. Copy the theme `content` folder directly into the project
+7. Copy the theme `content` folder directly into the project
 
 ```sh
 cp -r themes/portio-zola/content/ content/
