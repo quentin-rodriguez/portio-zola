@@ -1,6 +1,6 @@
 title = "Portio Zola"
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://quentin-rodriguez.github.io/portio-zola"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -78,6 +78,5 @@ address = "23 Khan Niketon, Grand Street, NYK."
 opening_hours = "Open from 10am to 6pm (close at 5pm Sundays) "
 
 [extra.map]
-api_key = "AIzaSyAU0RiMpTeSVD-3dDTVU6apKDjdhDcyrtw"
 latitude = "48.864716"
 longitude = "2.349014"
