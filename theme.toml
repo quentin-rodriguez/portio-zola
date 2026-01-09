@@ -1,14 +1,15 @@
 name = "Portio-Zola"
 description = "Portio-Zola is a minimal, well-formatted and extremely flexible theme"
-licence = "MIT"
+license = "MIT"
 homepage = "https://github.com/quentin-rodriguez/portio-zola.git"
-min_version = "0.20.0"
-demo = "https://staticmania.com/"
+min_version = "0.21.0"
+demo = "https://quentin-rodriguez.github.io/portio-zola"
 
 [author]
-name = "Quentin Rodriguez"
-repo = "https://github.com/quentin-rodriguez/portio-zola.git"
+name = "quentin-rodriguez"
+homepage = "https://github.com/quentin-rodriguez"
 
 [original]
-author = "Static Mania"
+author = "StaticMania"
+homepage = "https://github.com/StaticMania"
 repo = "https://github.com/StaticMania/portio-hugo.git"
