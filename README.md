@@ -1,8 +1,10 @@
 # Portio-Zola
 
 <div align="center">
-    ![license](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-    ![](https://img.shields.io/badge/-Live%20demo-blue?style=for-the-badge)
+
+![LICENSE](https://img.shields.io/badge/license-MIT-green?style=for-the-badge "License")
+![https://quentin-rodriguez.github.io/portio-zola](https://img.shields.io/badge/-Live%20demo-blue?style=for-the-badge "Live demo")
+
 </div>
 
 ![homepage](screenshot.png)
@@ -12,9 +14,6 @@
 Portio-Zola is a minimal, well-formatted theme that is extremely flexible and can be changed in whole or in part as required.
 
 This theme is based on [Portio-Hugo](https://github.com/StaticMania/portio-hugo.git), with all the features mentioned below.
-
-
-## 🔗 Live demo
 
 ## 💻 Installation
 
