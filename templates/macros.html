@@ -20,10 +20,22 @@
 {% endif %}
 {% endmacro %}
 
+{% macro feeds(path="") %}
+{% for filename in config.feed_filenames %}
+    {% set type = filename | replace(from=".xml", to="") %}
+    {% set url = get_url(path=path ~ "/" ~ filename, trailing_slash=false) %}
+    
+    {% if type in ["atom", "rss"] %}
+    <link rel="alternate" type="application/{{ type }}+xml" title="{{ type | title }}" href="{{ url }}">
+    {% endif %}
+{% endfor %}
+{% endmacro %}
+
+
 {% macro openstreetmap(delta, layer="mapnik", class="col-lg-6") %}
     {% if config.extra.map.longitude and config.extra.map.latitude %}
         {% set lng = config.extra.map.longitude | float %}
-        {% set lat = config.extra.map.latitude |  float %}
+        {% set lat = config.extra.map.latitude | float %}
     
         {% set min_lat = lat - delta %}
         {% set max_lat = lat + delta %}

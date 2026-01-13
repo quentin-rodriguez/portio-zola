@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% import "macros.html" as macros %}
+{% block rss %}
+{% if config.generate_feeds and taxonomy.feed %}
+    {{ macros::feeds(path=taxonomy.name ~ "/" ~ term.name) }}    
+{% endif %}
+{% endblock %}
 
 {% block content %}
 <header class="breadCrumb">
@@ -64,7 +68,7 @@
                 <h5 class="card-title">{{ page.title }}</h5>
                 <p class="card-text">
                     <small class="text-body-secondary">
-                        {{ page.date | date(format="%B %d, %Y") }}
+                        {{ page.date | date(format=config.extra.date_format) }}
                     </small>
                 </p>
             </a>

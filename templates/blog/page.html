@@ -19,7 +19,7 @@
     <ul class="post-meta">
       <li>
         <i class="lni lni-calendar"></i>
-        {{ page.date | date(format="%B %d, %Y") }}
+        {{ page.date | date(format=config.extra.date_format) }}
       </li>
       <li>
         <i class="lni lni-alarm-clock"></i>

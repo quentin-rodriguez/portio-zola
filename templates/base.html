@@ -2,11 +2,11 @@
 
 <!DOCTYPE html>
 
-<html lang="{{ config.default_language }}">
+<html lang="{{ lang }}">
     <head>
         <title>
             {% block title %}
-                {{ page.title | default(value=config.title) }}
+            {{ page.title | default(value=config.title) }}
             {% endblock %}
         </title>
         
@@ -17,9 +17,11 @@
         <meta itemprop="name" content="{{ page.title | default(value=config.title) }}">
         <meta itemprop="description" content="{{ page.description | default(value=config.description) }}"> 
 
-        {% if config.generate_feed %}
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
-        {% endif %}
+        {% block rss %}
+            {% if config.generate_feeds %}
+                {{ macros::feeds() }}
+            {% endif %}
+        {% endblock %}
 
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css') }}">

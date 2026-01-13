@@ -2,6 +2,8 @@ title = "Portio Zola"
 # The URL the site will be built for
 base_url = "https://quentin-rodriguez.github.io/portio-zola"
 
+generate_feeds = true
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
