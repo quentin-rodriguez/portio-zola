@@ -28,7 +28,7 @@
         <h3 class="breadCrumb__title">{{ section.title }}</h3>
         <nav aria-label="breadcrumb" class="d-flex justify-content-center">
           <ol class="breadcrumb align-items-center">
-            <li class="breadcrumb-item"><a href="{{ config.base_url }}">{{ config.title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ get_url(path=config.base_url, lang=lang) }}">{{ config.title }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ section.title }}</li>
           </ol>
         </nav>
@@ -40,7 +40,7 @@
 <section class="section contact__info">
   <div class="container">
     <div class="row">
-      {% if config.extra.address.address %}
+      {% if extra.address.address %}
       <div class="col-lg-4">
         <div class="contact__info_item">
           <div class="contact__info_item-icon">
@@ -56,12 +56,12 @@
             </div>
           </div>
           <h4>{{ trans(key='address', lang=lang) }}</h4>
-          <p>{{ config.extra.address.address }}</p>
+          <p>{{ extra.address.address }}</p>
         </div>
       </div>
       {% endif %}
 
-      {% if config.extra.address.phone and config.extra.address.email %}
+      {% if extra.address.phone and extra.address.email %}
       <div class="col-lg-4">
         <div class="contact__info_item">
           <div class="contact__info_item-icon">
@@ -76,15 +76,15 @@
               <img src="{{ get_url(path='images/contact/phone.svg') }}" alt="phone" />
             </div>
           </div>
-          <h4>{{ trans(key="phone") }} & {{ trans(key="email") }}</h4>
-          <p>{{ config.extra.address.phone }}<br>
-            <a href="mailto:{{ config.extra.address.email }}">{{ config.extra.address.email }}</a>
+          <h4>{{ trans(key="phone", lang=lang) }} & {{ trans(key="email", lang=lang) }}</h4>
+          <p>{{ extra.address.phone }}<br>
+            <a href="mailto:{{ extra.address.email }}">{{ extra.address.email }}</a>
           </p>
         </div>
       </div>
       {% endif %}
 
-      {% if config.extra.address.opening_hours %}
+      {% if extra.address.opening_hours %}
       <div class="col-lg-4">
         <div class="contact__info_item">
           <div class="contact__info_item-icon">
@@ -99,8 +99,8 @@
               <img src="{{ get_url(path='images/contact/time.svg') }}" alt="time" />
             </div>
           </div>
-          <h4>{{ trans(key="opening_hours") }}</h4>
-          <p>{{ config.extra.address.opening_hours }}</p>
+          <h4>{{ trans(key="opening_hours", lang=lang) }}</h4>
+          <p>{{ extra.address.opening_hours }}</p>
         </div>
       </div>
       {% endif %}
@@ -111,12 +111,12 @@
 <section class="contact-form">
   <div class="container">
     <div class="row">
-      <div class="{% if config.extra.map.longitude and config.extra.map.latitude %}col-lg-6{% else %}col-lg-12{% endif %}">
+      <div class="{% if extra.map.longitude and extra.map.latitude %}col-lg-6{% else %}col-lg-12{% endif %}">
         <div class="contact-form-title">
           <h3>{{ trans(key='form_title', lang=lang) }}</h3>
         </div>
         <div class="contact-form-input">
-          <form id="contact-form" action="{{ config.extra.formspree_url }}" method="POST">
+          <form id="contact-form" action="{{ extra.formspree_url }}" method="POST">
 
             <div class="form-row">
 

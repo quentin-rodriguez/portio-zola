@@ -1,6 +1,6 @@
-{% if config.extra.about_file %} 
+{% if extra.about_file %} 
 
-{% set about_data = load_data(path=config.extra.about_file) %}
+{% set about_data = load_data(path=extra.about_file) %}
 
 <section class="section about" id="about">
     <div class="container">
@@ -8,7 +8,7 @@
             <div class="col-lg-6 offset-lg-3">
                 <div class="about_header mb-5">
                    {% if about_data.infos.title %}<span class="top-title">{{ about_data.infos.title }}</span>{% endif %}
-                   {{ about_data.infos.description | markdown(inline = true) | safe }}
+                   {{ about_data.infos.description | markdown(inline=true) | safe }}
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                             </svg>
                         </div>
                         <div class="mb-4 text-light">
-                            {{ about_data.infos.content | markdown(inline = true) | safe }}
+                            {{ about_data.infos.content | markdown(inline=true) | safe }}
                         </div>
                     </div>
                 </div>

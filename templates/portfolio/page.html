@@ -80,7 +80,7 @@
         <div class="case-details-thumb">
           <img src="{{ get_url(path=page.extra.thumbnail) }}" alt="case-details" />
         </div>
-        {{ page.content | markdown | safe }}
+        {{ page.content | safe }}
       </div>
     </div>
     <div class="row">
@@ -115,10 +115,10 @@
             </div>
           </div>
           {% endif %}
-          {% if config.extra.socials %}
+          {% if extra.socials %}
           <div class="social">
             <ul>
-                {% for social in config.extra.socials %} 
+                {% for social in extra.socials %} 
                 <li>
                     <a href="{{ social.url }}"><i class="lni lni-{{ social.icon }}"></i></a>
                 </li>

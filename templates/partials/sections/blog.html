@@ -1,4 +1,4 @@
-{% set section = get_section(path='blog/_index.md') %}
+{% set section = get_section(path="blog/_index.md", lang=lang) %}
 
 {% if section.pages %}
 <section class="section blog" id="blog">
@@ -16,7 +16,7 @@
       </div>
       <div class="col-lg-6">
         <div class="blog__header_button desktop">
-          <a href="{{ get_url(path='blog') }}">See all post</a>
+          <a href="{{ get_url(path='blog', lang=lang) }}">See all post</a>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="blog__header_button mobile">
-          <a href="{{ get_url(path='blog') }}">See all post</a>
+          <a href="{{ get_url(path='blog', lang=lang) }}">See all post</a>
         </div>
       </div>
     </div>

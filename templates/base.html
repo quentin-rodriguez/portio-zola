@@ -1,5 +1,7 @@
 {% import 'macros.html' as macros %}
 
+{% set extra = config.extra[lang] | default(value=config.extra) %}
+
 <!DOCTYPE html>
 
 <html lang="{{ lang }}">
@@ -16,7 +18,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta itemprop="name" content="{{ page.title | default(value=config.title) }}">
         <meta itemprop="description" content="{{ page.description | default(value=config.description) }}"> 
-
         {% block rss %}
             {% if config.generate_feeds %}
                 {{ macros::feeds() }}
@@ -41,7 +42,7 @@
 
     <body>
         {% block navbar %}
-            {% include "partials/navbar.html" %}
+        {% include "partials/navbar.html" %}
         {% endblock %}
 
         <div id="content">
@@ -49,11 +50,11 @@
         </div>
 
         {% block footer %}
-            {% include "partials/footer.html" %}
+        {% include "partials/footer.html" %}
         {% endblock %}
         
         {% block javascripts %}
-        <script src="{{ get_url(path='js/bootstrap.min.js') }}"></script>    
+        <script src="{{ get_url(path='js/bootstrap.bundle.min.js') }}"></script>    
         <script src="{{ get_url(path='js/main.js') }}"></script>
         {% endblock %}
     </body>

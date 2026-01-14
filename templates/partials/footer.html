@@ -33,43 +33,43 @@
         <div class="row contact__widget">
             <div class="col-lg-4">
                 <div class="contact__widget_logo">
-                    <img src="{{ get_url(path=config.extra.footer_logo) }}" alt="widget-logo">
+                    <img src="{{ get_url(path=extra.footer_logo, lang=lang) }}" alt="widget-logo">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="contact__widget_sitemap">
-                    <h3>{{ trans(key='sitemap', lang=lang) }}</h3>
+                    <h3>{{ trans(key="sitemap", lang=lang) }}</h3>
                     <ul>
-                        {% for sitemap in config.extra.sitemaps %}
-                          <li><a href="{{ get_url(path=sitemap.url) }}">{{ sitemap.name }}</a></li>
+                        {% for sitemap in extra.sitemaps %}
+                          <li><a href="{{ get_url(path=sitemap.url, lang=lang) }}">{{ sitemap.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="contact__widget_address">
-                    <h3>{{ trans(key='address', lang=lang) }}</h3>
+                    <h3>{{ trans(key="address", lang=lang) }}</h3>
                     <ul>
-                        {% if config.extra.address.phone %}
+                        {% if extra.address.phone %}
                         <li>
-                            <a href="tel:{{ config.extra.address.phone }}">
-                                <i class="lni lni-phone"></i>{{ config.extra.address.phone }}
+                            <a href="tel:{{ extra.address.phone }}">
+                                <i class="lni lni-phone"></i>{{ extra.address.phone }}
                             </a>
                         </li> 
                         {% endif %}
 
-                        {% if config.extra.address.email %}
+                        {% if extra.address.email %}
                         <li>
-                            <a href="mailto:{{ config.extra.address.email }}">
-                                <i class="lni lni-envelope"></i>{{ config.extra.address.email }}
+                            <a href="mailto:{{ extra.address.email }}">
+                                <i class="lni lni-envelope"></i>{{ extra.address.email }}
                             </a>
                         </li>
                         {% endif %}
 
-                        {% if config.extra.address.address %}
+                        {% if extra.address.address %}
                         <li>
                             <p>
-                                <i class="lni lni-map-marker"></i>{{ config.extra.address.address }}
+                                <i class="lni lni-map-marker"></i>{{ extra.address.address }}
                             </p>
                         </li>
                         {% endif %}
@@ -80,13 +80,13 @@
         <div class="row contact__footer">
             <div class="col-lg-6">
                 <div class="contact__footer_copy">
-                    <p>{{ config.extra.copyright }}</p>
+                    <p>{{ extra.copyright }}</p>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="contact__footer_social">
                     <ul>
-                        {% for social in config.extra.socials %}
+                        {% for social in extra.socials %}
                         <li class="d-inline-block mx-2">
                             <a target="_blank" href="{{ social.url }}">
                                 <i class="lni lni-{{ social.icon }}"></i>

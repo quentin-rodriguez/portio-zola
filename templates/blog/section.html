@@ -29,7 +29,7 @@
 				<h3 class="breadCrumb__title">{{ section.title }}</h3>
 				<nav aria-label="breadcrumb" class="d-flex justify-content-center">
 					<ol class="breadcrumb align-items-center">
-						<li class="breadcrumb-item"><a href="{{ config.base_url }}">{{ config.title }}</a></li>
+						<li class="breadcrumb-item"><a href="{{ get_url(path=config.base_url, lang=lang) }}">{{ config.title }}</a></li>
 						<li class="breadcrumb-item active" aria-current="page">{{ section.title }}</li>
 					</ol>
 				</nav>
@@ -49,7 +49,7 @@
                         <h5 class="card-title">{{ page.title }}</h5>
                         <p class="card-text">
                             <small class="text-body-secondary">
-                                {{ page.date | date(format=config.extra.date_format) }}
+                                {{ page.date | date(format=extra.date_format) }}
                             </small>
                         </p>
                     </a>

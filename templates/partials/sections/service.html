@@ -1,6 +1,6 @@
-{% if config.extra.service_file %}
+{% if extra.service_file %}
 
-{% set service_data = load_data(path=config.extra.service_file) %}
+{% set service_data = load_data(path=extra.service_file) %}
 
 <section class="section service" id="service">
   <div class="service__background">
@@ -55,8 +55,8 @@
                             </div>
                         </div>
                       {% endif %}
-                      <h4> {{ service.title }} </h4>
-                      <p> {{ service.content | markdown | safe }} </p>
+                      <h4>{{ service.title }}</h4>
+                      <p>{{ service.content | markdown(inline=true) | safe }}</p>
                   </div>
                   {% endfor %}
               </div>

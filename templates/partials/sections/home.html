@@ -1,6 +1,6 @@
-{% if config.extra.home_file %}
+{% if extra.home_file %}
  
- {% set home_data = load_data(path=config.extra.home_file) %}
+ {% set home_data = load_data(path=extra.home_file) %}
 
  <section class="hero" id="home">
     <div class="hero_background-svg">
@@ -104,7 +104,7 @@
         </div>   
 
         <div class="popup-content">
-         <iframe src="{{ home_data.infos.video_url }}" referrerpolicy="strict-origin" allowfullscreen></iframe>
+            <iframe src="{{ home_data.infos.video_url }}" allowfullscreen></iframe>
         </div>    
       </div>
     {% endif %}

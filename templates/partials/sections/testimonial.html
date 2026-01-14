@@ -1,6 +1,6 @@
-{% if config.extra.testimonial_file %}
+{% if extra.testimonial_file %}
 
-{% set testimonial_data = load_data(path=config.extra.testimonial_file) %}
+{% set testimonial_data = load_data(path=extra.testimonial_file) %}
 
 <section class="section testimonial">
    <div class="testimonial__background_shape">
@@ -37,12 +37,10 @@
                    {% for testimonial in testimonial_data.infos.testimonials %}
                         <div class="testimonial__slider_item carousel-item {% if loop.first %} active{% endif %}">
                            <ul class="testimonial__slider_item-rating">
-                               {% for rate in range(end=5) %} 
-                                   {% if rate < testimonial.star %}
-                                       <li><i class="lni lni-star-filled"></i></li>
-                                   {% else %}
-                                       <li><i class="lni lni-star-filled inactive"></i></li>
-                                   {% endif %}
+                                {% for rate in range(end=5) %} 
+                                <li>
+                                    <i class="lni lni-star-filled{% if rate < testimonial.star %} inactive{% endif %}"></i>
+                                </li>
                                {% endfor %}
                            </ul>
                            <p class="testimonial__slider_item-content">{{ testimonial.comment }}</p>

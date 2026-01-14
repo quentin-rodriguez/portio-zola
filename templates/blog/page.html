@@ -8,8 +8,8 @@
         <h3 class="breadCrumb__title">{{ page.title }}</h3>
         <nav aria-label="breadcrumb" class="d-flex justify-content-center">
           <ol class="breadcrumb align-items-center">
-            <li class="breadcrumb-item"><a href="{{ config.base_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{ get_url(path='@/blog/_index.md') }}">All Post</a></li>
+            <li class="breadcrumb-item"><a href="{{ get_url(path=config.base_url, lang=lang) }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ get_url(path='@/blog/_index.md', lang=lang) }}">All Post</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
           </ol>
         </nav>
@@ -19,7 +19,7 @@
     <ul class="post-meta">
       <li>
         <i class="lni lni-calendar"></i>
-        {{ page.date | date(format=config.extra.date_format) }}
+        {{ page.date | date(format=extra.date_format) }}
       </li>
       <li>
         <i class="lni lni-alarm-clock"></i>
@@ -29,7 +29,7 @@
       <li>
         <i class="lni lni-tag"></i>
         {% for tag in page.taxonomies.tags %}
-          <a class="text-capitalize" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>
+          <a class="text-capitalize" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) }}">{{ tag }}</a>
         {% endfor %}
       </li>
       {% endif %}
@@ -37,7 +37,7 @@
       <li>
         <i class="lni lni-folder"></i>
         {% for category in page.taxonomies.categories %}
-          <a class="text-capitalize" href="{{ get_taxonomy_url(kind='categories', name=category) }}">{{ category }}</a>
+          <a class="text-capitalize" href="{{ get_taxonomy_url(kind='categories', name=category, lang=lang) }}">{{ category }}</a>
         {% endfor %}
       </li>
       {% endif %}
