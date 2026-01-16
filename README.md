@@ -2,6 +2,7 @@
 
 <div align="center">
 
+[![Zola](https://img.shields.io/badge/Zola-0.22.0-red?style=for-the-badge)](https://www.getzola.org/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![Live demo](https://img.shields.io/badge/-Live%20demo-blue?style=for-the-badge)](https://quentin-rodriguez.github.io/portio-zola)
 
@@ -43,7 +44,13 @@ git clone https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zol
 cp themes/portio-zola/config.toml .
 ```
 
-5. Copy the theme `content` folder directly into the project
+5. Add the `theme` to the configuration file
+
+```sh
+theme = "portio-zola"
+```
+
+6. Copy the theme `content` folder directly into the project
 
 ```sh
 cp -r themes/portio-zola/content/ content/
