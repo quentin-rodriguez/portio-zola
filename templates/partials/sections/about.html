@@ -1,6 +1,6 @@
 
 {% set path = "static/sections/about/" ~ lang ~  ".toml" %}
-{% set about = load_data(path=path, required=false) %}
+{% set data = load_data(path=path, required=false) %}
 
 {% if data %} 
 <section class="section about" id="about">
