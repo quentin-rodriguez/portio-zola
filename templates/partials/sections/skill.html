@@ -1,7 +1,7 @@
-{% if extra.skill_file %}
+{% set path = "static/sections/skill/" ~ lang ~ ".toml" %}
+{% set data = load_data(path=path, required=false) %}
 
-{% set skill_data = load_data(path=extra.skill_file) %}
-
+{% if data %}
 <section id="skill" class="section skill">
     <div class="skill__background_shape">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 600 600">
@@ -27,7 +27,7 @@
                         <img src="{{ get_url(path='images/hero/figure-svg.svg') }}" alt="figure-svg">
                     </div>
                     <div class="skill__thumb_image">
-                        <img src="{{ get_url(path=skill_data.infos.image) }}" 
+                        <img src="{{ get_url(path=data.image) }}" 
                              alt="skill-img"
                              style="mask: url({{ get_url(path='images/skill/skill-mask-svg.svg') }}); mask-repeat: no-repeat; mask-size: contain; mask-position: center center;"
                         >
@@ -37,14 +37,14 @@
             <div class="col-lg-6">
                 <div class="skill__progress">
                     <div class="skill__progress_heading">
-                      {% if skill_data.infos.top_title %}  
-                          <span>{{ skill_data.infos.top_title }}</span>
-                      {% endif %}
-                      <h1> {{ skill_data.infos.title }} </h1>
-                      <p> {{ skill_data.infos.subtitle }} </p>
+                        {% if data.top_title %}  
+                        <span>{{ data.top_title }}</span>
+                        {% endif %}
+                        <h1> {{ data.title }} </h1>
+                        <p> {{ data.subtitle }} </p>
                     </div>
-                    {% if skill_data.infos.skills %}
-                      {% for skill in skill_data.infos.skills %}
+                    {% if data.skills %}
+                      {% for skill in data.skills %}
                           <div class="skill__progress_item">
                               <h6> {{ skill.title }} </h6>
                               <div class="progress-value"><span>{{ skill.percent }}</span>%</div>

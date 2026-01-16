@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-    {% include "partials/sections/home.html" %}
-    {% include "partials/sections/about.html" %}
-    {% include "partials/sections/service.html" %}
-    {% include "partials/sections/resume.html" %}
-    {% include "partials/sections/portfolio.html" %}
-    {% include "partials/sections/skill.html" %}
-    {% include "partials/sections/testimonial.html" %}
-    {% include "partials/sections/blog.html" %}
+    {% include "partials/sections/home.html" ignore missing %}
+    {% include "partials/sections/about.html" ignore missing %}
+    {% include "partials/sections/service.html" ignore missing %}
+    {% include "partials/sections/resume.html" ignore missing %}
+    {% include "partials/sections/portfolio.html" ignore missing %}
+    {% include "partials/sections/skill.html" ignore missing %}
+    {% include "partials/sections/testimonial.html" ignore missing %}
+    {% include "partials/sections/blog.html" ignore missing %}
 {% endblock %}

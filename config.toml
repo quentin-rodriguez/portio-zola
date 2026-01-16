@@ -8,7 +8,7 @@ generate_feeds = true
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
 
 default_language = "en"
 
@@ -18,7 +18,9 @@ taxonomies = [
 ]
 
 [translations]
-contact = "Hire Me Now"
+showing_all = "Showing All"
+hire_me_now = "Hire Me Now"
+get_in_touch = "Get in touch"
 see_details = "See Details"
 sitemap = "Sitemap"
 address = "Address"
@@ -33,43 +35,93 @@ form_input_name = "Name"
 form_input_email = "Email"
 form_input_message = "Message"
 form_input_agreement = "I agree that my submitted data is being collected and stored."
+copyright = "All right reserved copyright © Portio 2020"
+
+# Menus
+home = "Home"
+about = "About"
+service = "Service"
+work = "Work"
+resume = "Resume"
+blog = "Blog"
+contact = "Contact"
+
+# Sitemaps
+about_me = "About me"
+frequently_ask_question = "Frequently Ask Question"
+privacy_and_policy = "Privacy & Policy"
+latest_article = "Latest Article"
+
+[languages.fr]
+title = "Portio Zola"
+generate_feeds = true
+build_search_index = false
+
+[languages.fr.translations]
+showing_all = "Afficher tout"
+hire_me_now = "Engagez‑moi maintenant"
+get_in_touch = "Entrer en contact"
+see_details = "Voir les détails"
+sitemap = "Plan du site"
+address = "Adresse"
+phone = "Téléphone"
+email = "E‑mail"
+categories_description = "Affichage de tous les articles de la catégorie"
+tags_description = "Affichage de tous les articles du tag"
+opening_hours = "Horaires d'ouverture"
+form_title = "Formulaire de contact"
+form_button = "Envoyer le message"
+form_input_name = "Nom"
+form_input_email = "E‑mail"
+form_input_message = "Message"
+form_input_agreement = "J’accepte que mes données soumises soient collectées et stockées."
+copyright = "Tous droits réservés © Portio 2020"
+
+# Menus
+home = "Accueil"
+about = "À propos"
+service = "Services"
+work = "Réalisations"
+resume = "CV"
+blog = "Blog"
+contact = "Contact"
+
+# Sitemaps
+about_me = "À propos de moi"
+frequently_ask_question = "Foire aux questions"
+privacy_and_policy = "Politique de confidentialité"
+latest_article = "Dernier article"
+
 
 [extra]
-home_file = "static/data/home.toml"
-resume_file = "static/data/resume.toml"
-skill_file = "static/data/skill.toml"
-about_file = "static/data/about.toml"
-service_file = "static/data/service.toml"
-testimonial_file = "static/data/testimonial.toml"
 date_format = "%d %B, %Y"
 logo = "images/logo.png"
 footer_logo = "images/logo.png"
 # google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
 formspree_url = "YOUR FORMSPREE URL"
-copyright = "All right reserved copyright © Portio 2020"
 display_cta = true
 
 menus = [
-  { name = "Home",    url = "#home" },
-  { name = "About",   url = "#about" },
-  { name = "Service", url = "#service" },
-  { name = "Work",    url = "#portfolio" },
-  { name = "Resume",  url = "#resume" },
-  { name = "Blog",    url = "#blog" },
-  { name = "Contact", url = "#contact" }
+  { name = "home", url = "#home" },
+  { name = "about", url = "#about" },
+  { name = "service", url = "#service" },
+  { name = "work", url = "#portfolio" },
+  { name = "resume", url = "#resume" },
+  { name = "blog", url = "#blog" },
+  { name = "contact", url = "#contact" }
 ]
 
 sitemaps = [
-  { name = "About me", url = "#about" },
-  { name = "Frequently Ask Question", url = "#" },
-  { name = "Privacy & Policy", url = "#" },
-  { name = "Latest Article", url = "#" }
+  { name = "about_me", url = "#about" },
+  { name = "frequently_ask_question", url = "#" },
+  { name = "privacy_and_policy", url = "#" },
+  { name = "latest_article", url = "#" }
 ]
 
 socials = [
   { icon = "facebook-original", url = "https://www.facebook.com/" },
   { icon = "linkedin-original", url = "https://www.linkedin.com/" },
-  { icon = "pinterest",         url = "https://www.pinterest.com" },
+  { icon = "pinterest", url = "https://www.pinterest.com" },
   { icon = "twitter-original",  url = "https://www.twitter.com" }
 ]
 

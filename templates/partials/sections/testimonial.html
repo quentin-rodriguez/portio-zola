@@ -1,7 +1,7 @@
-{% if extra.testimonial_file %}
+{% set path = "static/sections/testimonial/" ~ lang ~ ".toml" %}
+{% set data = load_data(path=path, required=false) %}
 
-{% set testimonial_data = load_data(path=extra.testimonial_file) %}
-
+{% if data %}
 <section class="section testimonial">
    <div class="testimonial__background_shape">
        <svg viewBox="0 0 1920 79">
@@ -12,10 +12,10 @@
        <div class="row text-center">
            <div class="col-lg-6 offset-lg-3">
                <div class="testimonial__header">
-                 {% if testimonial_data.infos.top_title %}
-                     <span>{{ testimonial_data.infos.top_title }}</span>
-                 {% endif %}
-                 <h1>{{ testimonial_data.infos.title }}</h1>
+                    {% if data.top_title %}
+                    <span>{{ data.top_title }}</span>
+                    {% endif %}
+                     <h1>{{ data.title }}</h1>
                </div>
            </div>
        </div>
@@ -23,7 +23,7 @@
            <div class="col-lg-12">
                <div id="carousel-testimonials" class="carousel slide" data-bs-ride="carousel">
                    <div class="carousel-indicators">
-                       {% for testimonial in testimonial_data.infos.testimonials %}
+                       {% for testimonial in data.testimonials %}
                        <button type="button"
                                class="testimonial__slider_button {% if loop.first %}active{% endif %}"
                                data-bs-target="#carousel-testimonials" 
@@ -34,7 +34,7 @@
                    </div>
 
                    <div class="carousel-inner">
-                   {% for testimonial in testimonial_data.infos.testimonials %}
+                   {% for testimonial in data.testimonials %}
                         <div class="testimonial__slider_item carousel-item {% if loop.first %} active{% endif %}">
                            <ul class="testimonial__slider_item-rating">
                                 {% for rate in range(end=5) %} 

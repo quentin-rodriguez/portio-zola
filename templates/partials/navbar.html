@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a href="{{ config.base_url }}" class="navbar-brand">
+        <a href="{{ get_url(path="/", lang=lang) }}" class="navbar-brand">
             <img src="{{ get_url(path=extra.logo) }}" alt="site-logo">
         </a>
         
@@ -14,7 +14,9 @@
             <ul class="nav navbar-nav main-navigation">
                 {% for menu in extra.menus %}
                 <li class="nav-item">
-                    <a href="{{ get_url(path=menu.url, lang=lang) }}" class="nav-link">{{ menu.name }}</a>
+                    <a href="{{ menu.url }}" class="nav-link">
+                        {{ trans(key=menu.name, lang=lang) }}
+                    </a>
                 </li>
                 {% endfor %}
                 
@@ -25,7 +27,7 @@
                     <ul class="dropdown-menu">
                         {% for language, _ in config.languages %}
                         <li>
-                            <a class="dropdown-item" href="{{ get_url(path=current_path, lang=language) }}">
+                            <a class="dropdown-item" href="{{ get_url(path="/", lang=language) }}">
                             {{ language | upper }}
                             </a>
                         </li>
@@ -36,7 +38,9 @@
             </ul>
 
             <div class="navbar-nav">
-                <a href="{{get_url(path='contact', lang=lang) }}" class="hire_button">{{ trans(key="contact", lang=lang) }}</a>
+                <a href="{{get_url(path='contact', lang=lang) }}" class="hire_button">
+                    {{ trans(key="hire_me_now", lang=lang) }}
+                </a>
             </div>
         </div>
     </div>

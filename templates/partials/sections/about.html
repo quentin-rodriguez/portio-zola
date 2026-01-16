@@ -1,14 +1,19 @@
-{% if extra.about_file %} 
 
-{% set about_data = load_data(path=extra.about_file) %}
+{% set path = "static/sections/about/" ~ lang ~  ".toml" %}
+{% set about = load_data(path=path, required=false) %}
 
+{% if data %} 
 <section class="section about" id="about">
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-6 offset-lg-3">
                 <div class="about_header mb-5">
-                   {% if about_data.infos.title %}<span class="top-title">{{ about_data.infos.title }}</span>{% endif %}
-                   {{ about_data.infos.description | markdown(inline=true) | safe }}
+                    {% if data.title %}
+                    <span class="top-title">
+                        {{ data.title }}
+                    </span>
+                    {% endif %}
+                   {{ data.description | markdown(inline=true) | safe }}
                 </div>
             </div>
         </div>
@@ -21,7 +26,7 @@
                             <img src="{{ get_url(path='images/hero/figure-svg.svg') }}" alt="figure-svg">
                         </div>
                         <div class="about_content-thumb-image">
-                            <img src="{{ get_url(path=about_data.infos.image) }}" alt="about-img"
+                            <img src="{{ get_url(path=data.image) }}" alt="about-img"
                                 style="mask: url({{ get_url(path='images/about/about-mask-svg.svg') }}); mask-size: cover;">
                         </div>
                     </div>
@@ -44,7 +49,7 @@
                             </svg>
                         </div>
                         <div class="mb-4 text-light">
-                            {{ about_data.infos.content | markdown(inline=true) | safe }}
+                            {{ data.content | markdown(inline=true) | safe }}
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
-{% if extra.service_file %}
+{% set path = "static/sections/service/" ~ lang ~ ".html" %}
+{% set data = load_data(path=path, required=false) %}
 
-{% set service_data = load_data(path=extra.service_file) %}
-
+{% if data %}
 <section class="section service" id="service">
   <div class="service__background">
       <svg viewBox="0 0 1283 1126">
@@ -31,17 +31,17 @@
       <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12">
               <div class="service__header">
-                  {% if service_data.infos.top_title %}
-                      <span>{{ service_data.infos.top_title }}</span>
-                  {% endif %}
-                  <h1>{{ service_data.infos.title }}</h1>
-                  <p> {{ service_data.infos.subtitle }} </p>
+                    {% if data.top_title %}
+                    <span>{{ data.top_title }}</span>
+                    {% endif %}
+                    <h1>{{ data.title }}</h1>
+                     <p> {{ data.subtitle }} </p>
               </div>
           </div>
       </div>
 
               <div class="service__slider">
-                  {% for service in service_data.infos.services %}
+                  {% for service in data.services %}
                   <div class="service__slider_item">
                       {% if service.image %}
                         <div class="service__slider_item-icon">

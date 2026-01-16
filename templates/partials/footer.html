@@ -24,7 +24,9 @@
                         <h1>Let’s Start a Project</h1>
                     </div>
                     <div class="contact__cta_action">
-                        <a href="{{ get_url(path='contact') }}">Get in touch</a>
+                        <a href="{{ get_url(path='contact', lang=lang) }}">
+                            {{ trans(key="get_in_touch", lang=lang) }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -41,7 +43,11 @@
                     <h3>{{ trans(key="sitemap", lang=lang) }}</h3>
                     <ul>
                         {% for sitemap in extra.sitemaps %}
-                          <li><a href="{{ get_url(path=sitemap.url, lang=lang) }}">{{ sitemap.name }}</a></li>
+                          <li>
+                              <a href="{{ sitemap.url }}">
+                                  {{ trans(key=sitemap.name, lang=lang) }}
+                              </a>
+                          </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -80,7 +86,7 @@
         <div class="row contact__footer">
             <div class="col-lg-6">
                 <div class="contact__footer_copy">
-                    <p>{{ extra.copyright }}</p>
+                    <p>{{ trans(key="copyright", lang=lang) }}</p>
                 </div>
             </div>
             <div class="col-lg-6">

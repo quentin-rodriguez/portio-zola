@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
 <header class="breadCrumb">
@@ -28,7 +28,7 @@
         <h3 class="breadCrumb__title">{{ section.title }}</h3>
         <nav aria-label="breadcrumb" class="d-flex justify-content-center">
           <ol class="breadcrumb align-items-center">
-            <li class="breadcrumb-item"><a href="{{ get_url(path=config.base_url, lang=lang) }}">{{ config.title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ get_url(path="/", lang=lang) }}">{{ config.title }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ section.title }}</li>
           </ol>
         </nav>

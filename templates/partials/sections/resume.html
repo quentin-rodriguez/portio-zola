@@ -1,28 +1,37 @@
-{% if extra.resume_file %}
 
-{% set resume_data = load_data(path=extra.resume_file) %}
+{% set path = "static/sections/resume/" ~ lang ~ ".toml" %}
+{% set data = load_data(path=path, required=false) %}
 
+{% if data %}
 <section class="section resume" id="resume">
    <div class="resume__background"></div>
    <div class="container">
        <div class="row">
            <div class="col-lg-6">
                <div class="resume__heading">
-                   <span>{{ resume_data.infos.title }}</span>
-                   <h1>{{ resume_data.infos.title }}</h1>
-                   <p> {{ resume_data.infos.subtitle }} </p><br><br>
-                   <p> {{ resume_data.infos.second_subtitle }} </p>
+                   <span>{{ data.title }}</span>
+                   <h1>{{ data.title }}</h1>
+                   <p> {{ data.subtitle }} </p><br><br>
+                   <p> {{ data.second_subtitle }} </p>
                    <ul class="nav nav-tabs">
-                       <li><a href="#{{ resume_data.infos.tabs[0].target }}" class="active" data-bs-toggle="tab">{{ resume_data.infos.tabs[0].name }}</a></li>
-                       <li><a href="#{{ resume_data.infos.tabs[1].target }}" data-bs-toggle="tab">{{ resume_data.infos.tabs[1].name }}</a></li>
+                       <li>
+                           <a href="#educations" class="active" data-bs-toggle="tab">
+                               {{ data.educations_tab }}
+                           </a>
+                       </li>
+                       <li>
+                           <a href="#experiences" data-bs-toggle="tab">
+                               {{ data.experiences_tab }}
+                           </a>
+                       </li>
                    </ul>
                </div>
            </div>
 
            <div class="col-lg-6">
                <div class="tab-content">
-                   <div class="resume__education tab-pane show active" id="{{ resume_data.infos.tabs[0].target }}">
-                       {% for education in resume_data.infos.educations %}
+                   <div class="resume__education tab-pane show active" id="educations">
+                       {% for education in data.educations %}
                            <div class="resume__education_item">
                                <span>{{ education.time }}</span>
                                <h4>{{ education.title }}</h4>
@@ -31,8 +40,8 @@
                        {% endfor %}
                    </div>
 
-                   <div class="resume__education tab-pane" id="{{ resume_data.infos.tabs[1].target }}">
-                       {% for experience in resume_data.infos.experiences %}
+                   <div class="resume__education tab-pane" id="experiences">
+                       {% for experience in data.experiences %}
                            <div class="resume__education_item">
                                <span>{{ experience.time }}</span>
                                <h4>{{ experience.title }}</h4>

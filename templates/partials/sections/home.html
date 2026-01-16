@@ -1,8 +1,8 @@
-{% if extra.home_file %}
- 
- {% set home_data = load_data(path=extra.home_file) %}
+{% set path = "static/sections/home/" ~ lang ~ ".toml" %}
+{% set data = load_data(path=path, required=false) %}
 
- <section class="hero" id="home">
+{% if data %}
+<section class="hero" id="home">
     <div class="hero_background-svg">
       <svg viewBox="0 0 1437 1180">
         <path
@@ -44,10 +44,14 @@
               </svg>
             </div>
             <div class="mb-5">  
-              {% if home_data.infos.title %}<span class="top-title pre-line">{{ home_data.infos.title }}</span>{% endif %}
-              {{ home_data.infos.description | markdown | safe }}
+              {% if data.title %}
+              <span class="top-title pre-line">
+                  {{ data.title }}
+              </span>
+              {% endif %}
+              {{ data.description | markdown(inline=true) | safe }}
             </div>
-            <a href="{{ get_url(path=home_data.infos.button_url) }}">{{ home_data.infos.button_name }}</a>
+            <a href="{{ get_url(path=data.button_url) }}">{{ data.button_name }}</a>
           </div>
         </div>
         <div class="col-lg-6">
@@ -56,7 +60,7 @@
               <img src="{{ get_url(path='images/hero/figure-svg.svg') }}" alt="figure-svg" />
             </div>
             <img
-              src="{{ get_url(path=home_data.infos.image) }}"
+              src="{{ get_url(path=data.image) }}"
               alt="hero-image"
               style="
                 mask: url({{ get_url(path='images/hero/hero-mask-svg.png') }});
@@ -65,12 +69,12 @@
                 mask-position: center center;
               "
             />
-            {% if home_data.infos.video_thumb %}
+            {% if data.video_thumb %}
             <div class="hero_figure-popup">
               <div class="thumb">
-                <img src="{{ get_url(path=home_data.infos.video_thumb) }}" alt="popup" />
+                <img src="{{ get_url(path=data.video_thumb) }}" alt="popup" />
               </div>
-              {% if home_data.infos.video_url %}
+              {% if data.video_url %}
               <a
                 href="#popup"
                 type="button"
@@ -97,17 +101,16 @@
       </div>
     </div>
 
-    {% if home_data.infos.video_url %}
+    {% if data.video_url %}
       <div id="popup">
         <div class="popup-close">
           <a href="#">✖</a>
         </div>   
 
         <div class="popup-content">
-            <iframe src="{{ home_data.infos.video_url }}" allowfullscreen></iframe>
+            <iframe src="{{ data.video_url }}" allowfullscreen></iframe>
         </div>    
       </div>
     {% endif %}
-
-  </section>
- {% endif %}
+</section>
+{% endif %}
