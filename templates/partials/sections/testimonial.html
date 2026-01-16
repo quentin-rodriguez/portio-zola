@@ -39,7 +39,7 @@
                            <ul class="testimonial__slider_item-rating">
                                 {% for rate in range(end=5) %} 
                                 <li>
-                                    <i class="lni lni-star-filled{% if rate > testimonial.star %} inactive{% endif %}"></i>
+                                    <i class="lni lni-star-filled{% if rate >= testimonial.star %} inactive{% endif %}"></i>
                                 </li>
                                {% endfor %}
                            </ul>
