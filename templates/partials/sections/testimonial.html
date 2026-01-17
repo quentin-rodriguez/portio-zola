@@ -29,7 +29,7 @@
                                data-bs-target="#carousel-testimonials" 
                                data-bs-slide-to="{{ loop.index0 }}" 
                                aria-label="Slide {{ loop.index }}"
-                               {% if loop.first %}aria-current=true{% endif %}> 
+                               {% if loop.first %}aria-current=true{% endif %}></button> 
                        {% endfor %}
                    </div>
 
@@ -44,7 +44,9 @@
                                {% endfor %}
                            </ul>
                            <p class="testimonial__slider_item-content">{{ testimonial.comment }}</p>
-                           <p class="testimonial__slider_item-author"><span>{{ testimonial.name }}</span> | {{ testimonial.time }}</p>
+                           <p class="testimonial__slider_item-author">
+                                <span>{{ testimonial.name }}</span> | {{ testimonial.time }}
+                           </p>
                       </div>
                    {% endfor %}
                    </div>

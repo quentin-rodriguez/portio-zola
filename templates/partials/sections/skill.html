@@ -29,8 +29,7 @@
                     <div class="skill__thumb_image">
                         <img src="{{ get_url(path=data.image) }}" 
                              alt="skill-img"
-                             style="mask: url({{ get_url(path='images/skill/skill-mask-svg.svg') }}); mask-repeat: no-repeat; mask-size: contain; mask-position: center center;"
-                        >
+                             style="mask: url({{ get_url(path='images/skill/skill-mask-svg.svg') }}); mask-repeat: no-repeat; mask-size: contain; mask-position: center center;">
                     </div>
                 </div>
             </div>
@@ -40,16 +39,16 @@
                         {% if data.top_title %}  
                         <span>{{ data.top_title }}</span>
                         {% endif %}
-                        <h1> {{ data.title }} </h1>
-                        <p> {{ data.subtitle }} </p>
+                        <h1>{{ data.title }}</h1>
+                        <p>{{ data.subtitle }}</p>
                     </div>
                     {% if data.skills %}
                       {% for skill in data.skills %}
                           <div class="skill__progress_item">
-                              <h6> {{ skill.title }} </h6>
+                              <h6>{{ skill.title }}</h6>
                               <div class="progress-value"><span>{{ skill.percent }}</span>%</div>
                               <div class="progress_item">
-                                  <progress value="0" max="100" data-max="{{ skill.percent }}">
+                                  <progress value="0" max="100" data-max="{{ skill.percent }}"></progress>
                               </div>
                           </div>
                       {% endfor %}
