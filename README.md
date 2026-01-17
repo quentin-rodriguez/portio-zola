@@ -16,6 +16,17 @@ Portio-Zola is a minimal, well-formatted theme that is extremely flexible and ca
 
 This theme is based on [Portio-Hugo](https://github.com/StaticMania/portio-hugo.git), with all the features mentioned below.
 
+## 📃 Features
+
+- Responsive reedy.
+- Powered by Bootstrap 5.
+- Blog support.
+- Multilingual support.
+- [Formspree.io](https://formspree.io/) support.
+- Portfolio support.
+- Google Analytics.
+- Easy customization.
+
 ## 💻 Installation
 
 1. Install [Zola](https://www.getzola.org/documentation/getting-started/installation/)
@@ -46,7 +57,7 @@ cp themes/portio-zola/config.toml .
 
 5. Add the `theme` to the configuration file
 
-```sh
+```toml
 theme = "portio-zola"
 ```
 
