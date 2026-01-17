@@ -14,7 +14,7 @@
             <ul class="nav navbar-nav main-navigation">
                 {% for menu in extra.menus %}
                 <li class="nav-item">
-                    <a href="{{ menu.url }}" class="nav-link">
+                    <a href="{{ get_url(path=menu.url, lang=lang) }}" class="nav-link">
                         {{ trans(key=menu.name, lang=lang) }}
                     </a>
                 </li>
