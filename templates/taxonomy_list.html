@@ -34,9 +34,9 @@
       </g>
     </svg>
   </div>
-  <div class="animate-pattern">
-    <img src="{{ get_url(path='images/service/background-pattern.svg') }}" alt="background-shape">
-   </div>
+    <div class="animate-pattern">
+        <img src="{{ get_url(path='images/service/background-pattern.svg') }}" alt="background-shape">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -48,6 +48,7 @@
                 </nav>
             </div>
         </div>
+    
   </div>
 </header>
 
@@ -57,11 +58,13 @@
         {% for term in terms %}
             <div class="card col-lg-3 m-2 text-center">
                 <div class="card-body">
-                    <a class="text-reset text-decoration-none" href="{{ term.permalink }}">{{ term.name }}</a>
+                    <a class="text-reset text-decoration-none" href="{{ term.permalink }}">
+                        {{ term.name }}
+                    </a>
                 </div>
             </div>
         {% endfor %}
-      <div>
+      </div>
   </div>
 </section>
 {% endblock %}

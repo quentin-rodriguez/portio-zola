@@ -61,6 +61,11 @@ title = "Portio Zola"
 generate_feeds = true
 build_search_index = false
 
+taxonomies = [
+    { name = "tags", feed = true, render = true, paginate_by = 9 },
+    { name = "categories", feed = true, render = true, paginate_by = 9 },
+]
+
 [languages.fr.translations]
 contact_me   = "Contactez‑moi"
 start_project = "Commencer un projet"
