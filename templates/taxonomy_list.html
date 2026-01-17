@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block content %}
 <header class="breadCrumb">
   <div class="svg-img">
@@ -42,7 +43,7 @@
                 <h3 class="breadCrumb__title text-capitalize">{{ taxonomy.name }}</h3>
                 <nav aria-label="breadcrumb" class="d-flex justify-content-center">
                     <ol class="breadcrumb align-items-center">
-                        <li>Showing all {{ taxonomy.name }}</li>
+                        <li>{{ trans(key="showing_all", lang=lang) }} {{ taxonomy.name }}</li>
                     </ol>
                 </nav>
             </div>

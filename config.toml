@@ -18,6 +18,8 @@ taxonomies = [
 ]
 
 [translations]
+contact_me = "Contact me"
+start_project = "Let's Start a Project"
 showing_all = "Showing All"
 hire_me_now = "Hire Me Now"
 get_in_touch = "Get in touch"
@@ -58,6 +60,8 @@ generate_feeds = true
 build_search_index = false
 
 [languages.fr.translations]
+contact_me   = "Contactez‑moi"
+start_project = "Commencer un projet"
 showing_all = "Afficher tout"
 hire_me_now = "Engagez‑moi maintenant"
 get_in_touch = "Entrer en contact"

@@ -51,7 +51,7 @@
               {% endif %}
               {{ data.description | markdown(inline=true) | safe }}
             </div>
-            <a href="{{ get_url(path=data.button_url) }}">{{ data.button_name }}</a>
+            <a href="{{ get_url(path=data.button_url, lang=lang) }}">{{ data.button_name }}</a>
           </div>
         </div>
         <div class="col-lg-6">

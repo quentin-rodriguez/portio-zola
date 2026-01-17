@@ -20,8 +20,8 @@
                         </svg>
                     </div>
                     <div class="contact__cta_content">
-                        <span>Contact me</span>
-                        <h1>Let’s Start a Project</h1>
+                        <span>{{ trans(key="contact_me", lang=lang) }}</span>
+                        <h1>{{ trans(key="start_project", lang=lang) }}</h1>
                     </div>
                     <div class="contact__cta_action">
                         <a href="{{ get_url(path='contact', lang=lang) }}">
@@ -35,7 +35,7 @@
         <div class="row contact__widget">
             <div class="col-lg-4">
                 <div class="contact__widget_logo">
-                    <img src="{{ get_url(path=extra.footer_logo, lang=lang) }}" alt="widget-logo">
+                    <img src="{{ get_url(path=extra.footer_logo) }}" alt="widget-logo">
                 </div>
             </div>
             <div class="col-lg-4">
