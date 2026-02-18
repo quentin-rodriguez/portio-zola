@@ -68,6 +68,8 @@ cp -r themes/portio-zola/content/ content/
 cp -r themes/portio-zola/static/ static/
 ```
 
+7. (Optional) Depending on the language set as `default_language`, the `_index.md` files must correspond to the appropriate language.
+
 ## 📥 Deployment
 
 Here is a list provided by [Zola](https://www.getzola.org/) to help you deploy your own site on different platforms.

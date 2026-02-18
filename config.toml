@@ -1,25 +1,26 @@
-title = "Portio Zola"
 # The URL the site will be built for
 base_url = "https://quentin-rodriguez.github.io/portio-zola"
 
+#
 minify_html = true
-
-generate_feeds = true
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+#
+default_language = "fr"
 
-default_language = "en"
+[languages.en]
+title = "Portio Zola"
+generate_feeds = true
+build_search_index = false
 
 taxonomies = [
     { name = "tags", feed = true, render = true, paginate_by = 9 },
     { name = "categories", feed = true, render = true, paginate_by = 9 },
 ]
 
-[translations]
+[languages.en.translations]
 contact_me = "Contact me"
 start_project = "Let's Start a Project"
 showing_all = "Showing All"
