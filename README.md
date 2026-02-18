@@ -49,7 +49,7 @@ git submodule add https://github.com/quentin-rodriguez/portio-zola.git themes/po
 git clone https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zola
 ```
 
-4. Copy the theme's `config.toml` file into your project
+4. Copy the theme's `config.toml` file into your project root
 
 ```sh
 cp themes/portio-zola/config.toml .
@@ -61,10 +61,11 @@ cp themes/portio-zola/config.toml .
 theme = "portio-zola"
 ```
 
-6. Copy the theme `content` folder directly into the project
+6. Copy the theme `content` and `static` folders directly into your project root
 
 ```sh
 cp -r themes/portio-zola/content/ content/
+cp -r themes/portio-zola/static/ static/
 ```
 
 ## 📥 Deployment
