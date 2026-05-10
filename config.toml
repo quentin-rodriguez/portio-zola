@@ -110,7 +110,6 @@ date_format = "%d %B, %Y"
 logo = "images/logo.png"
 footer_logo = "images/logo.png"
 # google_analytics = "YOUR TOKEN FOR GOOGLE ANALYTICS"
-formspree_url = "YOUR FORMSPREE URL"
 display_cta = true
 
 menus = [
@@ -143,6 +142,11 @@ email = "hello@example.com"
 address = "23 Khan Niketon, Grand Street, NYK."
 opening_hours = "Open from 10am to 6pm (close at 5pm Sundays) "
 
+[extra.form]
+active = true
+formspree_url = "YOUR FORMSPREE URL"
+
 [extra.map]
+active = true
 latitude = "48.864716"
 longitude = "2.349014"

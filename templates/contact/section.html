@@ -109,47 +109,68 @@
 </section>
 
 <section class="contact-form">
-  <div class="container">
-    <div class="row">
-      <div class="{% if extra.map.longitude and extra.map.latitude %}col-lg-6{% else %}col-lg-12{% endif %}">
-        <div class="contact-form-title">
-          <h3>{{ trans(key='form_title', lang=lang) }}</h3>
+    <div class="container">
+        <div class="d-flex flex-wrap gap-4">
+            {% if extra.form.active and extra.form.formspree_url %}
+            <div class="flex-fill" style="min-height: 500px;">
+                <div class="contact-form-title">
+                    <h3>{{ trans(key='form_title', lang=lang) }}</h3>
+                </div>
+                
+                <div class="contact-form-input">
+                    <form id="contact-form" action="{{ extra.form.formspree_url }}" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6 pr-3">
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="Name" 
+                                       placeholder="{{ trans(key='form_input_name', lang=lang) }}" 
+                                       required>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <input type="email" 
+                                       class="form-control" 
+                                       name="email" 
+                                       placeholder="{{ trans(key='form_input_email', lang=lang) }}" 
+                                       required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" 
+                                      id="message" 
+                                      rows="6" 
+                                      name="message" 
+                                      placeholder="{{ trans(key='form_input_message', lang=lang) }}">
+                            </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check small">
+                                <input type="checkbox" class="form-check-input" name="agreement" id="aggrement" required />
+                                <label class="form-check-label" for="aggrement">
+                                    {{ trans(key='form_input_agreement', lang=lang) }}
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-zoom contact-form-btn" id="contact-form-button" formtarget="_blank">
+                            {{ trans(key='form_button', lang=lang) }}
+                        </button>
+                        <p id="contact-form-status" class="mt-3"></p>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+           
+            {% if extra.map.active and extra.map.longitude and extra.map.latitude %}
+            <div class="flex-fill" style="min-height: 500px;">
+                {{ macros::map(zoom=20, lng=extra.map.longitude, lat=extra.map.latitude) }}
+            </div>
+            {% endif %}
         </div>
-        <div class="contact-form-input">
-          <form id="contact-form" action="{{ extra.formspree_url }}" method="POST">
-
-            <div class="form-row">
-
-              <div class="form-group col-md-6 pr-3">
-                <input type="text" class="form-control" name="Name" placeholder="{{ trans(key='form_input_name', lang=lang) }}" required>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" placeholder="{{ trans(key='form_input_email', lang=lang) }}" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <textarea class="form-control" id="message" rows="6" name="message" placeholder="{{ trans(key='form_input_message', lang=lang) }}"></textarea>
-            </div>
-
-            <div class="form-group">
-              <div class="form-check small">
-                <input type="checkbox" class="form-check-input" name="agreement" id="aggrement" required />
-                <label class="form-check-label" for="aggrement">
-                  {{ trans(key='form_input_agreement', lang=lang) }}
-                </label>
-              </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-zoom contact-form-btn" id="contact-form-button" formtarget="_blank">{{ trans(key='form_button', lang=lang) }}</button>
-            <p id="contact-form-status" class="mt-3"></p>
-          </form>
-        </div>
-      </div>
-
-      {{ macros::openstreetmap(delta=0.0002) }}
     </div>
-  </div>
 </section>
 
 {% endblock %}
