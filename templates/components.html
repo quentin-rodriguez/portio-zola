@@ -1,4 +1,4 @@
-{% macro pagination(paginator) %}
+{% component pagination(paginator) %}
 {% if paginator and paginator.number_pagers > 1 %}
 <nav aria-label="Page navigation" class="w-100">
   <ul class="pagination justify-content-center pagination-lg">
@@ -18,10 +18,10 @@
   </ul>
 </nav>
 {% endif %}
-{% endmacro %}
+{% endcomponent %}
 
-{% macro feeds(path="") %}
-{% for filename in config.feed_filenames %}
+{% component feeds(path="") %}
+{% for filename in config?.feed_filenames or [] %}
     {% set type = filename | replace(from=".xml", to="") %}
     {% set url = get_url(path=path ~ "/" ~ filename, trailing_slash=false) %}
     
@@ -29,35 +29,35 @@
     <link rel="alternate" type="application/{{ type }}+xml" title="{{ type | title }}" href="{{ url }}">
     {% endif %}
 {% endfor %}
-{% endmacro %}
+{% endcomponent %}
 
 
-{% macro map(zoom, lng, lat) %}
+{% component map(zoom, lat, lng) %}
 <iframe width="100%" 
         height="100%" 
         loading="lazy"
         allowfullscreen
         src="https://www.google.com/maps?q={{ lat }},{{ lng }}&z={{ zoom }}&output=embed">
 </iframe>
-{% endmacro %}
+{% endcomponent %}
 
-{% macro ms_application(path, color="#ffffff") %}
+{% component ms_application(path, color="#ffffff") %}
     {% set image = resize_image(path=path, width=144, height=144, format="png", op="scale") %}
 
     <meta name="msapplication-TileColor" content="{{ color }}">
     <meta name="msapplication-TileImage" content="{{ image.url }}">
-{% endmacro %}
+{% endcomponent %}
 
-{% macro icons(path, sizes, apple=false, op="scale") %}
+{% component icons(path, sizes, apple=false, op="scale") %}
     {% for size in sizes %}
         {% set image = resize_image(path=path, width=size, height=size, format="png", op=op) %}
         
         <link {% if apple %}rel="icon" type="image/png"{% else %}rel="apple-touch-icon"{% endif %} sizes="{{ size }}x{{ size }}" href="{{ image.url }}">
     {% endfor %}
-{% endmacro %}
+{% endcomponent %}
 
-{% macro analytics() %}
-    {% if config.extra.ganalytics %}
+{% component analytics() %}
+    {% if config?.extra?.ganalytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{config.extra.ganalytics}}"></script>
       <script>
           window.dataLayer = window.dataLayer || [];
@@ -66,4 +66,4 @@
           gtag('config', '{{ config.extra.ganalytics }}');
       </script>
     {% endif %}
-{% endmacro  %}
+{% endcomponent  %}

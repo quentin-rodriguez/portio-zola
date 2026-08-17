@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Zola](https://img.shields.io/badge/Zola-0.22.0-red?style=for-the-badge)](https://www.getzola.org/)
+[![Zola](https://img.shields.io/badge/Zola-0.23.2-red?style=for-the-badge)](https://www.getzola.org/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![Live demo](https://img.shields.io/badge/-Live%20demo-blue?style=for-the-badge)](https://quentin-rodriguez.github.io/portio-zola)
 

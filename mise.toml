@@ -1,5 +1,5 @@
 [tools]
-zola = "0.22.0"
+zola = "0.23.2"
 
 [tasks.check]
 run = "zola check --drafts"
