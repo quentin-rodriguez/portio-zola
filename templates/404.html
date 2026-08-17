@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 style="font-size: 120px; line-height: 1;">404</h1>
+        <h3>{{ trans(key="page_not_found", lang=lang) }}</h3>
+        <p class="mb-5">{{ trans(key="page_not_exist", lang=lang) }}</p>
+        <a href="{{ config.base_url }}" class="hire_button">
+            {{ trans(key="back_to_home", lang=lang) }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

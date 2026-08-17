@@ -8,7 +8,7 @@ minify_html = true
 compile_sass = true
 
 #
-default_language = "fr"
+default_language = "en"
 
 [languages.en]
 title = "Portio Zola"
@@ -41,6 +41,10 @@ form_input_email = "Email"
 form_input_message = "Message"
 form_input_agreement = "I agree that my submitted data is being collected and stored."
 copyright = "All right reserved copyright © Portio 2020"
+page_not_found = "Page not found"
+page_not_exist = "The page you are looking for does not exist or has been moved."
+back_to_home = "Back to home"
+
 
 # Menus
 home = "Home"
@@ -88,6 +92,9 @@ form_input_email = "E‑mail"
 form_input_message = "Message"
 form_input_agreement = "J’accepte que mes données soumises soient collectées et stockées."
 copyright = "Tous droits réservés © Portio 2020"
+page_not_found = "Page introuvable"
+page_not_exist = "La page que vous recherchez n'existe pas ou a été déplacée."
+back_to_home = "Retour à la page d'accueil"
 
 # Menus
 home = "Accueil"
