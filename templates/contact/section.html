@@ -166,7 +166,7 @@
            
             {% if extra.map.active and extra.map.longitude and extra.map.latitude %}
             <div class="flex-fill" style="min-height: 500px;">
-                {{ macros::map(zoom=20, lng=extra.map.longitude, lat=extra.map.latitude) }}
+                {{<map zoom={20} lng={extra.map.longitude} lat={extra.map.latitude} />}}
             </div>
             {% endif %}
         </div>

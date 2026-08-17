@@ -1,5 +1,3 @@
-{% import 'macros.html' as macros %}
-
 {% set extra = config.extra %}
 
 <!DOCTYPE html>
@@ -8,7 +6,7 @@
     <head>
         <title>
             {% block title %}
-            {{ page.title | default(value=config.title) }}
+            {{ page?.title | default(value=config.title) }}
             {% endblock %}
         </title>
         
@@ -16,11 +14,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta itemprop="name" content="{{ page.title | default(value=config.title) }}">
-        <meta itemprop="description" content="{{ page.description | default(value=config.description) }}"> 
+        <meta itemprop="name" content="{{ page?.title | default(value=config.title) }}">
+        <meta itemprop="description" content="{{ page?.description | default(value=config.description) }}"> 
         {% block rss %}
             {% if config.generate_feeds %}
-                {{ macros::feeds() }}
+                {{<feeds />}}
             {% endif %}
         {% endblock %}
 
@@ -33,10 +31,10 @@
         <link rel="icon" type="image/x-icon" href="{{ get_url(path='images/favicon.png') }}">
 
         {% block seo %}
-        {{ macros::ms_application(path="static/images/logo.png") }}
-        {{ macros::icons(path="static/images/logo.png", apple=true, sizes=[57, 72, 76, 114, 120, 144, 152, 180]) }}
-        {{ macros::icons(path="static/images/logo.png", sizes=[16, 32, 36, 48, 72, 96, 144, 192]) }}
-        {{ macros::analytics() }}
+        {{<ms_application path="static/images/logo.png" />}}
+        {{<icons path="static/images/logo.png" apple={true} sizes={[57, 72, 76, 114, 120, 144, 152, 180]} />}}
+        {{<icons path="static/images/logo.png" sizes={[16, 32, 36, 48, 72, 96, 144, 192]} />}}
+        {{<analytics />}}
         {% endblock %}
     </head>
 

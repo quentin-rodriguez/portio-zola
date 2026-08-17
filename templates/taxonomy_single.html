@@ -2,7 +2,7 @@
 
 {% block rss %}
 {% if config.generate_feeds and taxonomy.feed %}
-    {{ macros::feeds(path=taxonomy.name ~ "/" ~ term.name) }}    
+    {{<feeds path={taxonomy.name ~ "/" ~ term.name} />}}
 {% endif %}
 {% endblock %}
 
@@ -77,7 +77,7 @@
       {% endfor %}
     </div>
 
-    {{ macros::pagination(paginator=paginator) }}
+    {{<pagination paginator={paginator} />}}
   </div>
 </section>
 {% endblock %}
