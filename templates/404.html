@@ -8,7 +8,7 @@
         <h1 style="font-size: 120px; line-height: 1;">404</h1>
         <h3>{{ trans(key="page_not_found", lang=lang) }}</h3>
         <p class="mb-5">{{ trans(key="page_not_exist", lang=lang) }}</p>
-        <a href="{{ config.base_url }}" class="hire_button">
+        <a href="{{ get_url(path="/", lang=lang) }}" class="hire_button">
             {{ trans(key="back_to_home", lang=lang) }}
         </a>
       </div>
