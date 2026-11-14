@@ -2,7 +2,7 @@
 
 {% block rss %}
 {% if config.generate_feeds and taxonomy.feed %}
-    {{<feeds path={taxonomy.name ~ "/" ~ term.name} />}}
+    {{ <feeds filenames={config.feed_filenames} lang={lang} path={taxonomy.name ~ "/" ~ term.name} /> }}
 {% endif %}
 {% endblock %}
 

@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block rss %}
+    {% if config.generate_feeds %}
+        {{ <feeds filenames={config.feed_filenames} lang={lang} /> }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     {% include "partials/sections/home.html" %}
     {% include "partials/sections/about.html" %}

@@ -16,11 +16,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta itemprop="name" content="{{ page?.title | default(value=config.title) }}">
         <meta itemprop="description" content="{{ page?.description | default(value=config.description) }}"> 
-        {% block rss %}
-            {% if config.generate_feeds %}
-                {{<feeds />}}
-            {% endif %}
-        {% endblock %}
+
+        {% block robots %}{% endblock %}
+        {% block rss %}{% endblock %}
 
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ get_url(path='css/bootstrap.min.css', cachebust=true) }}">
@@ -31,10 +29,9 @@
         <link rel="icon" type="image/x-icon" href="{{ get_url(path='images/favicon.png') }}">
 
         {% block seo %}
-        {{<ms_application path="static/images/logo.png" />}}
-        {{<icons path="static/images/logo.png" apple={true} sizes={[57, 72, 76, 114, 120, 144, 152, 180]} />}}
-        {{<icons path="static/images/logo.png" sizes={[16, 32, 36, 48, 72, 96, 144, 192]} />}}
-        {{<analytics />}}
+        {{ <icons path="static/images/logo.png" rel="apple-touch-icon" sizes={[57, 72, 76, 114, 120, 144, 152, 180]} /> }}
+        {{ <icons path="static/images/logo.png" rel='icon' sizes={[16, 32, 36, 48, 72, 96, 144, 192]} /> }}
+        {{ <analytics /> }}
         {% endblock %}
     </head>
 

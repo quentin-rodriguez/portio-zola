@@ -1,13 +1,3 @@
-const hamburger = document.querySelector("nav button");
-
-function processClick(event) {
-    event.preventDefault();
-
-    document.getElementById("navbarCollapse")
-        .classList
-        .toggle("collapse");
-}
-
 function animateProgress() {
     document.querySelectorAll("#skill progress").forEach((el) => {
         if (el.dataset.max) {
@@ -45,6 +35,5 @@ function onScroll() {
     changeNavbarColor();
 }
 
-hamburger.onclick = processClick;
 window.onload = onLoad;
 window.onscroll = onScroll;

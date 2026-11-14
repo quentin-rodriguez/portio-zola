@@ -1,4 +1,4 @@
-{% component pagination(paginator) %}
+{% component pagination(paginator: map) %}
 {% if paginator and paginator.number_pagers > 1 %}
 <nav aria-label="Page navigation" class="w-100">
   <ul class="pagination justify-content-center pagination-lg">
@@ -8,7 +8,7 @@
         </li>
     {% endfor %}
 
-    {% if pagintor.next %}
+    {% if paginator.next %}
     <li class="page-item">
       <a class="page-link" href="{{ paginator.next }}" rel="next">
         →
@@ -20,13 +20,20 @@
 {% endif %}
 {% endcomponent %}
 
-{% component feeds(path="") %}
-{% for filename in config?.feed_filenames or [] %}
-    {% set type = filename | replace(from=".xml", to="") %}
-    {% set url = get_url(path=path ~ "/" ~ filename, trailing_slash=false) %}
-    
+{% component feeds(filenames: array, lang: string, path: string = '') %}
+{% for filename in filenames %}
+    {% set type = filename | replace(from='.xml', to='') %}
+    {% set file = filename %}
+
+    {% if path %}
+        {% set file = path ~ "/" ~ filename %}
+    {% endif %}
+
     {% if type in ["atom", "rss"] %}
-    <link rel="alternate" type="application/{{ type }}+xml" title="{{ type | title }}" href="{{ url }}">
+        <link rel="alternate" 
+              type="application/{{ type }}+xml" 
+              title="{{ type | capitalize }}" 
+              href="{{ get_url(path=file, lang=lang, trailing_slash=false) }}">
     {% endif %}
 {% endfor %}
 {% endcomponent %}
@@ -41,18 +48,14 @@
 </iframe>
 {% endcomponent %}
 
-{% component ms_application(path, color="#ffffff") %}
-    {% set image = resize_image(path=path, width=144, height=144, format="png", op="scale") %}
-
-    <meta name="msapplication-TileColor" content="{{ color }}">
-    <meta name="msapplication-TileImage" content="{{ image.url }}">
-{% endcomponent %}
-
-{% component icons(path, sizes, apple=false, op="scale") %}
+{% component icons(path: string, rel: string, sizes: array = [], format: string = 'png') %}
     {% for size in sizes %}
-        {% set image = resize_image(path=path, width=size, height=size, format="png", op=op) %}
+        {% set image = resize_image(path=path, width=size, height=size, format=format, op='scale') %}
         
-        <link {% if apple %}rel="icon" type="image/png"{% else %}rel="apple-touch-icon"{% endif %} sizes="{{ size }}x{{ size }}" href="{{ image.url }}">
+        <link type="image/{{ format }}" 
+              rel="{{ rel }}" 
+              sizes="{{ size }}x{{ size }}" 
+              href="{{ image.url }}">
     {% endfor %}
 {% endcomponent %}
 

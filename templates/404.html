@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block title %}404 | {{ config.title }}{% endblock %}
+
+{% block robots %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
 {% block content %}
 <section class="section" style="min-height: 60vh; display: flex; align-items: center;">
   <div class="container">
